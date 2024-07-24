@@ -43,7 +43,7 @@ export const loadMovies =
 
       const data = await res.json()
 
-      console.log('Fetched data:', data)
+      console.log(data)
 
       dispatch(setMovies(data.results))
     } catch (err) {
