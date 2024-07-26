@@ -33,7 +33,7 @@ export const loadMovies =
       // console.log('Fetching movies from URL:', url)
 
       const res = await fetch(url)
-      // console.log('Response status:', res.status)
+      console.log('Response status:', res.status)
 
       if (!res.ok) {
         throw new Error(

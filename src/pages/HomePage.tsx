@@ -5,12 +5,12 @@ import { useMoviesList } from '../hooks/useMoviesList'
 
 export const HomePage = () => {
   const { error, status, list } = useMoviesList()
-
+  console.log(error)
   return (
     <div className="homepage-con">
       {status === 'loading' && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
-      <RecommendedMovies list={list} />
+      {list.length > 0 && <RecommendedMovies list={list} />}
       {/* <MovieList /> */}
     </div>
   )
