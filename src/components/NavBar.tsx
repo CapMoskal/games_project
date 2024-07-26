@@ -15,9 +15,6 @@ export const NavBar = () => {
       <NavLink className={setStyle} to="/later">
         Watch Later
       </NavLink>
-      <NavLink className={setStyle} to="/wanted">
-        Wanted
-      </NavLink>
     </div>
   )
 }

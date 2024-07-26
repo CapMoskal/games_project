@@ -5,7 +5,7 @@ export const Header = () => {
   return (
     <header className="header">
       <NavLink to="" className="logo">
-        MovieWhat?
+        GamesWhat?
       </NavLink>
       <NavBar />
     </header>

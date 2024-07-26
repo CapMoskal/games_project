@@ -1,3 +1,3 @@
 export const Footer = () => {
-  return <footer className="footer">2024</footer>
+  return <footer className="footer">Games What ? 2024</footer>
 }
