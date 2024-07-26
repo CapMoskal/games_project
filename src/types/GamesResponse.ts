@@ -1,6 +1,6 @@
 import { Game } from './GameType'
 
-export interface GamesList {
+export interface GamesResponse {
   count: number
   next: string
   previous: string

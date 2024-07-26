@@ -1,3 +1,3 @@
 export const Wishlist = () => {
-  return <h1>Later here</h1>
+  return <h1>Wishlist here</h1>
 }

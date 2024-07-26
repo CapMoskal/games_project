@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux'
-import { moviesListReducer } from './movie-list/movie-list-reducers'
+
+import { allGamesReducer } from './all-games-list/all-games-reducer'
 
 export const rootReducer = combineReducers({
-  movies: moviesListReducer,
+  games: allGamesReducer,
 })
 
 export type RootState = ReturnType<typeof rootReducer>

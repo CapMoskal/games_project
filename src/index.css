@@ -45,24 +45,11 @@
 }
 
 main {
+  display: flex;
+  gap: 20px;
   padding: 25px;
   font-weight: 600;
   font-size: 20px;
-}
-
-.popular-con h1 {
-  font-size: 1.4em;
-  font-weight: 800;
-}
-
-/* fix it later */
-.footer {
-  margin: 0 auto;
-  padding: 10px 20px;
-  text-align: center;
-  position: absolute;
-  top: 100%;
-  border-top: 1px solid #272a31;
 }
 
 .active-link {
@@ -70,4 +57,12 @@ main {
   cursor: default;
   border-bottom: 2px solid #ff740f;
   transform: border-bottom 0.3s ease;
+}
+
+.sidebar {
+  border: 1px solid white;
+}
+
+.popular-games-con--item-img {
+  width: 350px;
 }
