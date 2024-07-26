@@ -1,5 +1,5 @@
 export * from './apiResponseTypes'
-export * from './genreTypes'
+export * from './GenreType'
 export * from './movieTypes'
 export * from './stateTypes'
 export * from './movie-list-actions-types'
