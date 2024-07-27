@@ -66,18 +66,21 @@ main {
 }
 
 .games-layout {
-  /* border: 1px solid white; */
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 34px;
 }
 
 .game-con {
-  /* border: 1px solid white; */
   max-width: 250px;
   border-radius: 15px;
   background-color: #272729;
+  min-height: 250px;
+}
+
+.game-con h4 {
+  margin: 10px 10px;
 }
 
 .game-con--img {
@@ -86,4 +89,26 @@ main {
   width: 250px;
   height: 150px;
   object-fit: cover;
+}
+
+.game-con-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+.game-con-info h4 {
+  text-align: center;
+  border-radius: 5px;
+  padding: 0 8px;
+  font-size: 18px;
+}
+
+.game-con-info--platforms {
+  display: flex;
+  align-items: center;
+}
+.game-con-info--platforms p {
+  margin: 0;
+  font-size: 16px;
 }
