@@ -9,10 +9,10 @@ export const NavBar = () => {
       <NavLink className={setStyle} to="/">
         Home
       </NavLink>
-      <NavLink className={setStyle} to="/favorites">
+      <NavLink className={setStyle} to="favorites">
         Favorites
       </NavLink>
-      <NavLink className={setStyle} to="/later">
+      <NavLink className={setStyle} to="later">
         Watch Later
       </NavLink>
     </div>

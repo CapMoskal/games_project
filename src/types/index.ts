@@ -1,4 +1,4 @@
-export * from './AllGamesActionsType'
+export * from './AllGamesActionsTypes'
 export * from './GameType'
 export * from './GamesResponse'
 export * from './GenreType'

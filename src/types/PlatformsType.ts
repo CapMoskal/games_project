@@ -3,6 +3,7 @@ export interface Platform {
     id: number
     slug: string
     name: string
+    img_background: string
   }
   released_at: string
   requirements: {

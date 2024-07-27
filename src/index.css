@@ -5,7 +5,8 @@
 
   color-scheme: light dark;
   color: #f0f0f0;
-  background-color: #111318;
+  background-color: #171718;
+  /* background-color: #111318; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -46,7 +47,7 @@
 
 main {
   display: flex;
-  gap: 20px;
+  gap: 50px;
   padding: 25px;
   font-weight: 600;
   font-size: 20px;
@@ -61,8 +62,28 @@ main {
 
 .sidebar {
   border: 1px solid white;
+  min-width: 220px;
 }
 
-.popular-games-con--item-img {
-  width: 350px;
+.games-layout {
+  /* border: 1px solid white; */
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.game-con {
+  /* border: 1px solid white; */
+  max-width: 250px;
+  border-radius: 15px;
+  background-color: #272729;
+}
+
+.game-con--img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
 }
