@@ -56,7 +56,7 @@ main {
 .active-link {
   color: #f0f0f0;
   cursor: default;
-  border-bottom: 2px solid #ff740f;
+  border-bottom: 2px solid #38ff21;
   transform: border-bottom 0.3s ease;
 }
 
@@ -80,7 +80,7 @@ main {
 }
 
 .game-con h4 {
-  margin: 10px 10px;
+  margin: 10px 10px 20px;
 }
 
 .game-con--img {
@@ -96,6 +96,7 @@ main {
   align-items: center;
   justify-content: space-between;
   padding: 10px;
+  height: 20px;
 }
 .game-con-info h4 {
   text-align: center;
@@ -111,4 +112,19 @@ main {
 .game-con-info--platforms p {
   margin: 0;
   font-size: 16px;
+}
+
+.game-con--btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 10px 20px;
+}
+
+.game-con--btns--item {
+  color: #f0f0f0;
+}
+.game-con--btns--item:hover {
+  color: #38ff21;
+  cursor: pointer;
 }

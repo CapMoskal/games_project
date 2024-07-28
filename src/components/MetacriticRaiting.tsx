@@ -18,7 +18,9 @@ const redStyle = {
 export const MetacriticRaiting: React.FC<metacriticRaitingType> = ({
   raiting,
 }) => {
-  if (raiting > 79) {
+  if (!raiting) {
+    return <h4></h4>
+  } else if (raiting > 74) {
     return <h4 style={greenStyle}>{raiting}</h4>
   } else if (raiting > 49) {
     return <h4 style={yellowStyle}>{raiting}</h4>

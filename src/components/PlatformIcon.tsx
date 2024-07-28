@@ -6,6 +6,7 @@ const platformIcons: { [key: string]: string } = {
   'Apple Macintosh': 'src/icons/apple_icon_white.svg',
   Linux: 'src/icons/linux_icon_white.svg',
   Android: 'src/icons/android_icon_white.svg',
+  iOS: 'src/icons/ios_icon_white.svg',
 }
 
 interface PlatformIconProps {

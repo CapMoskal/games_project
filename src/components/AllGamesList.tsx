@@ -1,7 +1,14 @@
 import { Game } from '../types/GameType'
+
 import { useAllGamesList } from '../hooks/useAllGamesList'
-import { PlatformIcon } from './PlatformIcon'
+
 import { MetacriticRaiting } from './MetacriticRaiting'
+import { PlatformIcon } from './PlatformIcon'
+import {
+  GiftOutlined,
+  HeartOutlined,
+  PlusCircleOutlined,
+} from '@ant-design/icons'
 
 export const AllGamesList = () => {
   const { error, status, games } = useAllGamesList()
@@ -51,6 +58,15 @@ export const AllGamesList = () => {
                   <MetacriticRaiting raiting={game.metacritic} />
                 </div>
                 <h4>{game.name}</h4>
+                <div className="game-con--btns">
+                  {/* добавить логику, если игра уже в моей библиотеке, 
+                  то будет один значок, если игра не добавлена, то другой */}
+                  {/* Также с другими значками  */}
+                  {/* подумать какие кнопки должны быть */}
+                  {/* <HeartOutlined className="game-con--btns--item" /> */}
+                  <PlusCircleOutlined className="game-con--btns--item" />
+                  <GiftOutlined className="game-con--btns--item" />
+                </div>
               </div>
             ))}
           </div>
