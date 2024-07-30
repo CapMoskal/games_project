@@ -19,11 +19,23 @@
   align-items: center;
   padding: 20px;
   border-bottom: 1px solid #272a31;
+  height: 50px;
 }
 
 .navbar {
   display: flex;
   gap: 20px;
+}
+
+.navbar-item {
+  font-size: 30px;
+  color: #f0f0f0;
+  transition: color 0.3s ease;
+}
+
+.navbar-item:hover {
+  color: #38ff21;
+  cursor: pointer;
 }
 
 .sidebar {

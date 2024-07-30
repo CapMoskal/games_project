@@ -1,7 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
 
-import { HomePage } from './pages/HomePage'
-import { Favorite } from './pages/Favorites'
 import { Wishlist } from './pages/Wishlist'
 import { NotFound } from './pages/NotFound'
 import { GameDetail } from './pages/GameDetail'
@@ -21,6 +19,7 @@ function App() {
           <Route path="allGames/:id" element={<GameDetail />} />
           <Route path="wishlist" element={<Wishlist />} />
           <Route path="library" element={<Library />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </>

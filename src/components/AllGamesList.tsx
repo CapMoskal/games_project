@@ -8,8 +8,10 @@ import { Platforms } from './Platforms'
 import {
   GiftOutlined,
   HeartOutlined,
+  LoadingOutlined,
   PlusCircleOutlined,
 } from '@ant-design/icons'
+import { Spin } from 'antd'
 
 export const AllGamesList = () => {
   const { error, status, games } = useAllGamesList()
@@ -19,7 +21,11 @@ export const AllGamesList = () => {
 
   return (
     <div>
-      {status === 'loading' && <h1>Loading...</h1>}
+      {status === 'loading' && (
+        <Spin
+          indicator={<LoadingOutlined style={{ color: '#f0f0f0' }} />}
+        />
+      )}
       {error && <h1>Error: {error}</h1>}
       {status === 'received' && (
         <div>
