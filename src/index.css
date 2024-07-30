@@ -6,7 +6,6 @@
   color-scheme: light dark;
   color: #f0f0f0;
   background-color: #171718;
-  /* background-color: #111318; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,7 +17,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 20px 0 20px;
+  padding: 20px;
   border-bottom: 1px solid #272a31;
 }
 
@@ -27,42 +26,71 @@
   gap: 20px;
 }
 
-.navbar-item,
-.logo {
-  padding-bottom: 20px;
+.sidebar {
+  border: 1px solid white;
+  min-width: 150px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sidebar-select {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sidebar-select--title {
+  margin: 5px 0;
+}
+
+.sidebar-select-item {
   color: #f0f0f0bf;
+  transition: color 0.3s ease;
+  font-size: 19px;
+  padding-bottom: 8px;
+}
+
+.sidebar-select-item,
+.logo {
   text-align: center;
   text-decoration: none;
-  font-size: 20px;
   font-weight: 700;
-  transition: color 0.3s ease;
 }
 .logo {
   color: #f0f0f0;
+  font-size: 20px;
 }
-.navbar-item:hover {
+.sidebar-select-item:hover {
   cursor: pointer;
   color: #f0f0f0;
 }
 
-main {
-  display: flex;
-  gap: 50px;
-  padding: 25px;
-  font-weight: 600;
-  font-size: 20px;
+.icon-con {
+  background-color: #272729;
+  padding: 7px;
+  border-radius: 10px;
+  margin-right: 10px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+.sidebar-select-item:hover .icon-con,
+.active-link .icon-con {
+  color: #272729;
+  background-color: #38ff21;
 }
 
 .active-link {
   color: #f0f0f0;
   cursor: default;
-  border-bottom: 2px solid #38ff21;
-  transform: border-bottom 0.3s ease;
 }
 
-.sidebar {
-  border: 1px solid white;
-  min-width: 220px;
+main {
+  display: flex;
+  gap: 10px;
+  padding: 25px;
+  font-weight: 600;
+  font-size: 20px;
 }
 
 .games-layout {
@@ -73,7 +101,7 @@ main {
 }
 
 .game-con {
-  max-width: 250px;
+  min-width: 270px;
   border-radius: 15px;
   background-color: #272729;
   min-height: 250px;
@@ -86,8 +114,8 @@ main {
 .game-con--img {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  width: 250px;
-  height: 150px;
+  width: 270px;
+  height: 160px;
   object-fit: cover;
 }
 

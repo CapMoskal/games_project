@@ -1,8 +1,10 @@
 import { Dispatch } from 'redux'
+
 import { Game, GamesResponse } from '../../types'
 import { AllGamesActionsType } from '../../types'
+import { QueryParams } from '../../types'
+
 import { ALL_GAMES_URL, API_KEY } from '../../config'
-import { QueryParams } from '../../types/ParamsType'
 
 export const SET_ALL_GAMES = '@@ALL-GAMES/SET_ALL_GAMES'
 export const SET_LOADING = '@@ALL-GAMES/SET_LOADING'
@@ -36,9 +38,6 @@ export const loadAllGames =
     try {
       const url = createURL(ALL_GAMES_URL, params)
       const res = await fetch(url)
-      // const res = await fetch(
-      //   `${ALL_GAMES_URL}?key=${API_KEY}&page=1&page_size=10`
-      // )
 
       if (!res.ok) {
         throw new Error(

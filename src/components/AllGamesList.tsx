@@ -3,7 +3,8 @@ import { Game } from '../types/GameType'
 import { useAllGamesList } from '../hooks/useAllGamesList'
 
 import { MetacriticRaiting } from './MetacriticRaiting'
-import { PlatformIcon } from './PlatformIcon'
+import { Platforms } from './Platforms'
+
 import {
   GiftOutlined,
   HeartOutlined,
@@ -33,27 +34,7 @@ export const AllGamesList = () => {
                 />
                 <div className="game-con-info">
                   <div className="game-con-info--platforms">
-                    {game.parent_platforms.map(
-                      (
-                        elem: { platform: { name: string } },
-                        index: number
-                      ) => {
-                        if (index < 3) {
-                          return (
-                            <PlatformIcon
-                              key={elem.platform.name}
-                              platform={elem.platform.name}
-                            />
-                          )
-                        } else if (index === 3) {
-                          return (
-                            <p key="plus">
-                              +{game.parent_platforms.length - index}
-                            </p>
-                          )
-                        }
-                      }
-                    )}
+                    <Platforms platforms={game.parent_platforms} />
                   </div>
                   <MetacriticRaiting raiting={game.metacritic} />
                 </div>

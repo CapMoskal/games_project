@@ -7,6 +7,10 @@ export const Header = () => {
       <NavLink to="" className="logo">
         GamesWhat?
       </NavLink>
+      <form action="">
+        <input type="text" />
+        <button>search</button>
+      </form>
       <NavBar />
     </header>
   )

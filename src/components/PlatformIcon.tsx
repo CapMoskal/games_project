@@ -9,13 +9,11 @@ const platformIcons: { [key: string]: string } = {
   iOS: 'src/icons/ios_icon_white.svg',
 }
 
-interface PlatformIconProps {
+interface Props {
   platform: string
 }
 
-export const PlatformIcon: React.FC<PlatformIconProps> = ({
-  platform,
-}) => {
+export const PlatformIcon = ({ platform }: Props) => {
   const iconSrc = platformIcons[platform]
 
   return (

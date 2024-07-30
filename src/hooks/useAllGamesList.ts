@@ -3,9 +3,14 @@ import { useEffect } from 'react'
 
 import { RootState } from '../store/rootReducer'
 import { loadAllGames } from '../store/all-games-list/all-games-actions'
-import { useAppDispatch } from '../types/dispatchType'
+import { useAppDispatch } from '../types/DispatchType'
 import { API_KEY } from '../config'
+import { QueryParams } from '../types/ParamsType'
 
+type Props = {
+  params: QueryParams
+}
+// { params }: Props
 export const useAllGamesList = () => {
   const dispatch = useAppDispatch()
   const { error, status, games } = useSelector(
