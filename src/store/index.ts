@@ -4,7 +4,7 @@ import storage from 'redux-persist/lib/storage'
 import { rootReducer, RootState } from './rootReducer'
 import { thunk, ThunkMiddleware } from 'redux-thunk'
 
-import { MovieListActionTypes } from '../types'
+import { AllGamesActionsType } from '../types'
 
 declare global {
   interface Window {
@@ -27,7 +27,7 @@ const store = createStore(
   persistedReducer,
   composeEnhancer(
     applyMiddleware(
-      thunk as ThunkMiddleware<RootState, MovieListActionTypes>
+      thunk as ThunkMiddleware<RootState, AllGamesActionsType>
     )
   )
 )

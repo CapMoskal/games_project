@@ -4,7 +4,7 @@ import { Game, GamesResponse } from '../../types'
 import { AllGamesActionsType } from '../../types'
 import { QueryParams } from '../../types'
 
-import { ALL_GAMES_URL, API_KEY } from '../../config'
+import { ALL_GAMES_URL } from '../../config'
 
 export const SET_ALL_GAMES = '@@ALL-GAMES/SET_ALL_GAMES'
 export const SET_LOADING = '@@ALL-GAMES/SET_LOADING'
@@ -30,25 +30,27 @@ const createURL = (baseURL: string, params: QueryParams): string => {
   return url.toString()
 }
 
-export const loadAllGames =
+export const loadGames =
   (params: QueryParams) =>
   async (dispatch: Dispatch<AllGamesActionsType>) => {
     dispatch(setLoading())
 
-    try {
-      const url = createURL(ALL_GAMES_URL, params)
-      const res = await fetch(url)
+    if (params.key) {
+      try {
+        const url = createURL(ALL_GAMES_URL, params)
+        const res = await fetch(url)
 
-      if (!res.ok) {
-        throw new Error(
-          'Network response was not ok ' + res.statusText
-        )
+        if (!res.ok) {
+          throw new Error(
+            'Network response was not ok ' + res.statusText
+          )
+        }
+
+        const data: GamesResponse = await res.json()
+        dispatch(setAllGames(data.results))
+      } catch (err) {
+        dispatch(setError(err.message))
+        console.log(err.message)
       }
-
-      const data: GamesResponse = await res.json()
-      dispatch(setAllGames(data.results))
-    } catch (err) {
-      dispatch(setError(err.message))
-      console.log(err.message)
     }
   }

@@ -2,33 +2,34 @@ import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 
 import { RootState } from '../store/rootReducer'
-import { loadAllGames } from '../store/all-games-list/all-games-actions'
+import { loadGames } from '../store/all-games-list/all-games-actions'
+
 import { useAppDispatch } from '../types/DispatchType'
-import { API_KEY } from '../config'
 import { QueryParams } from '../types/ParamsType'
 
-type Props = {
-  params: QueryParams
-}
-// { params }: Props
-export const useAllGamesList = () => {
+// import { API_KEY } from '../config'
+
+export const useGamesList = () => {
   const dispatch = useAppDispatch()
   const { error, status, games } = useSelector(
     (state: RootState) => state.games
   )
+  const params = useSelector((state: RootState) => state.params)
 
   useEffect(() => {
-    const params = {
-      key: API_KEY,
-      page: 1,
-      // page_size: 10,
-      genres: 'adventure',
-      // dates: '2010-01-01,2010-12-31',
-    }
+    // const params = {
+    //   key: API_KEY,
+    //   page: 1,
+    //   // page_size: 10,
+    //   // genres: 'adventure',
+    //   dates: '2010-01-01,2010-12-31',
+    //   ordering: 'raiting',
+    // }
 
-    dispatch(loadAllGames(params))
+    dispatch(loadGames(params))
+    console.log('effect runs')
     // dispatch(loadAllGames())
-  }, [dispatch])
+  }, [dispatch, params])
 
   return { error, status, games }
 }

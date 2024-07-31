@@ -30,7 +30,7 @@ export const Sidebar = () => {
         </NavLink>
         <NavLink className={setStyle} to="library">
           <InboxOutlined className="icon-con" />
-          Library
+          My library
         </NavLink>
       </div>
       <div className="sidebar-select">
