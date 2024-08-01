@@ -16,7 +16,7 @@ interface initialStateType {
 }
 
 const initialState: initialStateType = {
-  order: null,
+  order: 'raiting',
   platform: 'allPlatforms',
   genre: 'allGenre',
   date: null,
