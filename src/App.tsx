@@ -5,9 +5,10 @@ import { NotFound } from './pages/NotFound'
 import { GameDetail } from './pages/GameDetail'
 
 import { Layout } from './components/Layout'
-import { TrendGames } from './components/TrendGames'
+import { TrendGames } from './pages/TrendGames'
 import { Library } from './components/Library'
-import { AllGamesList } from './components/AllGamesList'
+import { AllGamesList } from './pages/AllGamesList'
+import { LastMonthGames } from './pages/LastMonthGames'
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<TrendGames />} />
+          <Route path="lastMonth" element={<LastMonthGames />} />
           <Route path="allGames" element={<AllGamesList />} />
           <Route path="allGames/:id" element={<GameDetail />} />
           <Route path="wishlist" element={<Wishlist />} />

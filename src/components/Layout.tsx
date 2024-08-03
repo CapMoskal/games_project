@@ -11,7 +11,7 @@ export const Layout = () => {
         <Sidebar />
         <Outlet />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }

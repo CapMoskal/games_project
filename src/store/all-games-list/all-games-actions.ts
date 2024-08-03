@@ -29,7 +29,7 @@ const createURL = (baseURL: string, params: QueryParams): string => {
       return url.searchParams.append(key, params[key])
     }
   })
-  console.log(url.toString())
+
   return url.toString()
 }
 

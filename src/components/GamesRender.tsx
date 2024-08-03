@@ -5,12 +5,13 @@ import { Platforms } from './Platforms'
 
 type Props = {
   games: Game[]
+  title: string
 }
 
-export const GamesRender = ({ games }: Props) => {
+export const GamesRender = ({ games, title }: Props) => {
   return (
     <>
-      <h1 className="games-title">All Games</h1>
+      <h1 className="games-title">{title}</h1>
       <div className="games-layout">
         {games.map((game: Game) => (
           <div key={game.id} className="game-con">

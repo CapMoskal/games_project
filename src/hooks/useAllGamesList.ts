@@ -16,18 +16,8 @@ export const useGamesList = () => {
   const params = useSelector((state: RootState) => state.params)
 
   useEffect(() => {
-    // const params = {
-    //   key: API_KEY,
-    //   page: 1,
-    //   // page_size: 10,
-    //   // genres: 'adventure',
-    //   dates: '2010-01-01,2010-12-31',
-    //   ordering: 'raiting',
-    // }
-
     dispatch(loadGames(params))
     console.log('effect runs')
-    // dispatch(loadAllGames())
   }, [dispatch, params])
 
   return { error, status, games }

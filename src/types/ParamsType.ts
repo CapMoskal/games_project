@@ -5,7 +5,7 @@ export interface QueryParams {
   platforms: string | null
   page?: number
   page_size?: number
-  genres: GenresType
+  genres?: GenresType
   dates?: string
   ordering:
     | 'name'
