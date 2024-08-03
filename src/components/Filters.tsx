@@ -9,11 +9,14 @@ import {
 
 const platformOptions = [
   { value: 'allPlatforms', label: 'All platforms' },
-  { value: 'playstation', label: 'Playstation' },
-  { value: 'xbox', label: 'XBox' },
-  { value: 'pc', label: 'PC' },
-  { value: 'nintendo', label: 'Nintendo' },
-  { value: 'linux', label: 'Linux' },
+  { value: '1', label: 'PC' },
+  { value: '2', label: 'Playstation' },
+  { value: '3', label: 'Xbox' },
+  { value: '4', label: 'iOS' },
+  { value: '5', label: 'Apple Macintosh' },
+  { value: '6', label: 'Linux' },
+  { value: '7', label: 'Nintendo' },
+  { value: '8', label: '"Android"' },
 ]
 const genreOptions = [
   { value: 'allGenre', label: 'All genres' },

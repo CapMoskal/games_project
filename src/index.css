@@ -115,17 +115,48 @@ main {
 }
 
 .games-layout {
+  position: relative;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 34px;
 }
 
+.game-con {
+  width: 270px;
+  min-height: 250px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.game-con:hover {
+  transform: scale(1.03);
+  z-index: 10;
+}
+
 .game-card {
-  min-width: 270px;
   border-radius: 15px;
   background-color: #272729;
-  min-height: 250px;
+  overflow: hidden;
+}
+.game-con:hover .game-card {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.game-card-extra {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  width: 250px;
+  background-color: #272729;
+  padding: 10px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  transition: opacity 0.3s ease;
+}
+.game-con:hover .game-card-extra {
+  display: block;
+  opacity: 1;
 }
 
 .game-card--title {
