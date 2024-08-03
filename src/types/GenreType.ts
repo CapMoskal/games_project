@@ -4,7 +4,7 @@ export interface Genre {
 }
 
 export type GenresType =
-  | 'allGenre' // ?????
+  | null
   | 'action'
   | 'rpg'
   | 'indie'

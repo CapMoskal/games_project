@@ -24,9 +24,12 @@ const setAllGames = (data: Game[]): AllGamesActionsType => ({
 
 const createURL = (baseURL: string, params: QueryParams): string => {
   const url = new URL(baseURL)
-  Object.keys(params).forEach((key) =>
-    url.searchParams.append(key, params[key])
-  )
+  Object.keys(params).forEach((key) => {
+    if (params[key]) {
+      return url.searchParams.append(key, params[key])
+    }
+  })
+  console.log(url.toString())
   return url.toString()
 }
 

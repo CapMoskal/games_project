@@ -8,18 +8,16 @@ import {
 } from '../store/filters/filters-actions'
 
 const platformOptions = [
-  { value: 'allPlatforms', label: 'All platforms' },
+  { value: null, label: 'All platforms' },
   { value: '1', label: 'PC' },
   { value: '2', label: 'Playstation' },
   { value: '3', label: 'Xbox' },
-  { value: '4', label: 'iOS' },
   { value: '5', label: 'Apple Macintosh' },
   { value: '6', label: 'Linux' },
   { value: '7', label: 'Nintendo' },
-  { value: '8', label: '"Android"' },
 ]
 const genreOptions = [
-  { value: 'allGenre', label: 'All genres' },
+  { value: null, label: 'All genres' },
   { value: 'adventure', label: 'Adventure' },
   { value: 'action', label: 'Action' },
   { value: 'rpg', label: 'RPG' },
@@ -27,12 +25,9 @@ const genreOptions = [
 ]
 const orderOptions = [
   { value: 'raiting', label: 'Raiting' },
-  { value: 'releaseDate', label: 'Release date' },
+  { value: 'released', label: 'Release date' },
   { value: 'name', label: 'Name' },
 ]
-// !!!!!!!!!!
-// нужно поменять value на id платформ !!!!!!!!!!
-// !!!!!!!!!!
 
 // styles for select antd
 const selectStyles = {
@@ -69,7 +64,7 @@ export const Filters = ({
   )
   const genreS = (
     <Select
-      defaultValue="allGenre"
+      defaultValue={null}
       style={{ width: 130, marginRight: 5 }}
       onChange={(value) => {
         dispatch(setGenre(value))
@@ -79,7 +74,7 @@ export const Filters = ({
   )
   const platformsS = (
     <Select
-      defaultValue="allPlatforms"
+      defaultValue={null}
       style={{ width: 140, marginRight: 5 }}
       onChange={(value) => {
         dispatch(setPlatform(value))

@@ -10,15 +10,15 @@ import {
 
 interface initialStateType {
   order: string | null
-  platform: string
-  genre: GenresType
+  platform: string | null
+  genre: GenresType | null
   date: string | null
 }
 
 const initialState: initialStateType = {
   order: 'raiting',
-  platform: 'allPlatforms',
-  genre: 'allGenre',
+  platform: null,
+  genre: null,
   date: null,
 }
 

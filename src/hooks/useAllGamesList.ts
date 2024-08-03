@@ -5,7 +5,6 @@ import { RootState } from '../store/rootReducer'
 import { loadGames } from '../store/all-games-list/all-games-actions'
 
 import { useAppDispatch } from '../types/DispatchType'
-import { QueryParams } from '../types/ParamsType'
 
 // import { API_KEY } from '../config'
 

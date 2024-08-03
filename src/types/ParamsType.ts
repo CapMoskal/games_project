@@ -2,12 +2,12 @@ import { GenresType } from './GenreType'
 
 export interface QueryParams {
   key: string
-  platforms: string
+  platforms: string | null
   page?: number
   page_size?: number
-  genres?: GenresType
+  genres: GenresType
   dates?: string
-  ordering?:
+  ordering:
     | 'name'
     | 'released'
     | 'added'

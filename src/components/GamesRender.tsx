@@ -13,8 +13,8 @@ export const GamesRender = ({ games }: Props) => {
       <h1 className="games-title">All Games</h1>
       <div className="games-layout">
         {games.map((game: Game) => (
-          <div className="game-con">
-            <div key={game.id} className="game-card">
+          <div key={game.id} className="game-con">
+            <div className="game-card">
               <img
                 className="game-card--img"
                 src={game.background_image}
@@ -30,26 +30,33 @@ export const GamesRender = ({ games }: Props) => {
               <div className="game-card--btns">
                 {/* добавить логику, если игра уже в моей библиотеке, 
                   то будет один значок, если игра не добавлена, то другой */}
-                {/* Также с другими значками  */}
-                {/* подумать какие кнопки должны быть */}
-                {/* <HeartOutlined className="game-card--btns--item" /> */}
                 <PlusCircleOutlined className="game-card--btns--item" />
                 <GiftOutlined className="game-card--btns--item" />
               </div>
               <div className="game-card-extra">
-                <ul className="game-card-extra--genres">
-                  {game.genres.map((genre) => (
-                    <li
-                      key={genre.id}
-                      className="game-card-extra--genres-title"
-                    >
-                      {genre.name}
-                    </li>
-                  ))}
-                </ul>
-                <div className="game-card-extra--date">
-                  <h5>{game.released}</h5>
+                <div className="game-card-extra--info">
+                  <h5 className="game-card-extra--info-title">
+                    Released:
+                  </h5>
+                  <h5 className="game-card-extra--info-release">
+                    {game.released}
+                  </h5>
                 </div>
+                <ul className="game-card-extra--info">
+                  <h5 className="game-card-extra--info-title">
+                    Genres:
+                  </h5>
+                  <div className="game-card-extra--info-genres">
+                    {game.genres.map((genre) => (
+                      <li
+                        key={genre.id}
+                        className="game-card-extra--info-genres--item"
+                      >
+                        {genre.name}
+                      </li>
+                    ))}
+                  </div>
+                </ul>
               </div>
             </div>
           </div>

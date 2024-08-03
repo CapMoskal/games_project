@@ -1,17 +1,8 @@
-import { Game } from '../types/GameType'
-
 import { useGamesList } from '../hooks/useAllGamesList'
 
-import { MetacriticRaiting } from './MetacriticRaiting'
-import { Platforms } from './Platforms'
 import { Filters } from './Filters'
 
-import {
-  GiftOutlined,
-  HeartOutlined,
-  LoadingOutlined,
-  PlusCircleOutlined,
-} from '@ant-design/icons'
+import { LoadingOutlined } from '@ant-design/icons'
 import { Spin } from 'antd'
 
 import { API_KEY } from '../config'
@@ -26,25 +17,23 @@ import { GamesRender } from './GamesRender'
 export const AllGamesList = () => {
   const dispatch = useAppDispatch()
   const { error, status, games } = useGamesList()
-  const filters = useSelector((state: RootState) => state.filters)
-  // берем фильтры и кидаем в params, чтобы они отправили запрос
-  // с новыми параметрами
 
-  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  // а нужке ли тут кастомный хук ??????
-  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  // useParamURL() ??????
+  const filters = useSelector((state: RootState) => state.filters)
+  console.log(filters.platform)
+
   useEffect(() => {
     const params: QueryParams = {
       key: API_KEY,
-      platforms: '1',
-      page: 1,
+      platforms: filters.platform,
+      ordering: filters.order as QueryParams['ordering'],
+      genres: filters.genre as QueryParams['genres'],
+
+      // page: 1,
       // page_size: 10,
-      ordering: 'raiting',
       // dates: '2017-01-01,2017-12-31',
     }
     dispatch(setParams(params))
-  }, [dispatch])
+  }, [dispatch, filters])
 
   return (
     <div className="games-n-filters">
