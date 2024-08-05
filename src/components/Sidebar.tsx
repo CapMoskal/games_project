@@ -39,6 +39,7 @@ export const Sidebar = () => {
           My library
         </NavLink>
       </div>
+
       <div className="sidebar-select">
         <h3 className="sidebar-select--title">New Releases</h3>
         <NavLink className={setStyle} to="/">
