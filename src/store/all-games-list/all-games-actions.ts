@@ -1,7 +1,10 @@
 import { Dispatch } from 'redux'
-import { Game } from '../../types'
+
+import { Game, GamesResponse } from '../../types'
 import { AllGamesActionsType } from '../../types'
-import { ALL_GAMES_URL, API_KEY } from '../../config'
+import { QueryParams } from '../../types'
+
+import { ALL_GAMES_URL } from '../../config'
 
 export const SET_ALL_GAMES = '@@ALL-GAMES/SET_ALL_GAMES'
 export const SET_LOADING = '@@ALL-GAMES/SET_LOADING'
@@ -19,25 +22,38 @@ const setAllGames = (data: Game[]): AllGamesActionsType => ({
   payload: data,
 })
 
-export const loadAllGames =
-  () => async (dispatch: Dispatch<AllGamesActionsType>) => {
+const createURL = (baseURL: string, params: QueryParams): string => {
+  const url = new URL(baseURL)
+  Object.keys(params).forEach((key) => {
+    if (params[key]) {
+      return url.searchParams.append(key, params[key])
+    }
+  })
+
+  return url.toString()
+}
+
+export const loadGames =
+  (params: QueryParams) =>
+  async (dispatch: Dispatch<AllGamesActionsType>) => {
     dispatch(setLoading())
 
-    try {
-      const res = await fetch(
-        `${ALL_GAMES_URL}?key=${API_KEY}&page=1&page_size=10`
-      )
+    if (params.key) {
+      try {
+        const url = createURL(ALL_GAMES_URL, params)
+        const res = await fetch(url)
 
-      if (!res.ok) {
-        throw new Error(
-          'Network response was not ok ' + res.statusText
-        )
+        if (!res.ok) {
+          throw new Error(
+            'Network response was not ok ' + res.statusText
+          )
+        }
+
+        const data: GamesResponse = await res.json()
+        dispatch(setAllGames(data.results))
+      } catch (err) {
+        dispatch(setError(err.message))
+        console.log(err.message)
       }
-
-      const data = await res.json()
-      dispatch(setAllGames(data.results))
-    } catch (err) {
-      dispatch(setError(err.message))
-      console.log(err.message)
     }
   }

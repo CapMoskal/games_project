@@ -1,20 +1,21 @@
+import { EllipsisOutlined } from '@ant-design/icons'
+import { MdAccountCircle } from 'react-icons/md'
 import { NavLink } from 'react-router-dom'
-
-const setStyle = ({ isActive }: { isActive: boolean }) =>
-  isActive ? 'navbar-item active-link' : 'navbar-item'
 
 export const NavBar = () => {
   return (
     <div className="navbar">
-      <NavLink className={setStyle} to="/">
-        Home
+      <NavLink to="/register">
+        <MdAccountCircle className="navbar-item" />
       </NavLink>
-      <NavLink className={setStyle} to="favorites">
-        Favorites
-      </NavLink>
-      <NavLink className={setStyle} to="later">
-        Watch Later
-      </NavLink>
+      <EllipsisOutlined
+        onMouseOver={() => {
+          // console.log('over')
+          // сделать появление модального окна с доп кнопками
+        }}
+        className="navbar-item"
+      />
+      {/* наводя на троеточие будет выпадать меню с доп функциями (faq и тд) */}
     </div>
   )
 }

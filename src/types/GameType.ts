@@ -1,4 +1,5 @@
 import { Genre } from './GenreType'
+import { ParentPlatformType } from './ParentPlatformsType'
 import { Platform } from './PlatformsType'
 
 export interface Game {
@@ -11,4 +12,5 @@ export interface Game {
   genres: Genre[]
   platforms: Platform[]
   metacritic: number
+  parent_platforms: ParentPlatformType[]
 }

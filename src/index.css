@@ -6,7 +6,6 @@
   color-scheme: light dark;
   color: #f0f0f0;
   background-color: #171718;
-  /* background-color: #111318; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,8 +17,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 20px 0 20px;
+  padding: 20px;
   border-bottom: 1px solid #272a31;
+  height: 50px;
 }
 
 .navbar {
@@ -27,63 +27,212 @@
   gap: 20px;
 }
 
-.navbar-item,
-.logo {
-  padding-bottom: 20px;
+.navbar-item {
+  font-size: 30px;
+  color: #f0f0f0;
+  transition: color 0.3s ease;
+}
+
+.navbar-item:hover {
+  color: #38ff21;
+  cursor: pointer;
+}
+
+.sidebar {
+  min-width: 150px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sidebar-select {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sidebar-select--title {
+  margin: 5px 0;
+}
+
+.sidebar-select-item {
   color: #f0f0f0bf;
+  transition: color 0.3s ease;
+  font-size: 19px;
+  padding-bottom: 8px;
+}
+
+.sidebar-select-item,
+.logo {
   text-align: center;
   text-decoration: none;
-  font-size: 20px;
   font-weight: 700;
-  transition: color 0.3s ease;
 }
 .logo {
   color: #f0f0f0;
+  font-size: 20px;
 }
-.navbar-item:hover {
+.sidebar-select-item:hover {
   cursor: pointer;
   color: #f0f0f0;
 }
 
-main {
-  display: flex;
-  gap: 50px;
-  padding: 25px;
-  font-weight: 600;
-  font-size: 20px;
+.icon-con {
+  background-color: #272729;
+  padding: 7px;
+  border-radius: 10px;
+  margin-right: 10px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+.sidebar-select-item:hover .icon-con,
+.active-link .icon-con {
+  color: #272729;
+  background-color: #38ff21;
 }
 
 .active-link {
   color: #f0f0f0;
   cursor: default;
-  border-bottom: 2px solid #ff740f;
-  transform: border-bottom 0.3s ease;
 }
 
-.sidebar {
-  border: 1px solid white;
-  min-width: 220px;
+main {
+  display: flex;
+  gap: 10px;
+  padding: 25px;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.games-title {
+  margin: 10px 0;
+}
+
+.games-n-filters {
+  display: flex;
+  flex-direction: column;
 }
 
 .games-layout {
-  /* border: 1px solid white; */
+  position: relative;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 34px;
 }
 
 .game-con {
-  /* border: 1px solid white; */
-  max-width: 250px;
-  border-radius: 15px;
-  background-color: #272729;
+  width: 270px;
+  min-height: 250px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.game-con:hover {
+  transform: scale(1.03);
+  z-index: 10;
 }
 
-.game-con--img {
+.game-card {
+  border-radius: 15px;
+  background-color: #272729;
+  overflow: hidden;
+}
+.game-con:hover .game-card {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.game-card-extra {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  width: 250px;
+  background-color: #272729;
+  padding: 10px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  transition: opacity 10.3s ease;
+}
+.game-con:hover .game-card-extra {
+  display: block;
+  opacity: 1;
+}
+
+.game-card-extra--info {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+  padding: 0;
+}
+
+.game-card-extra--info-title {
+  margin: 0;
+}
+
+.game-card-extra--info-release {
+  margin: 0;
+}
+
+.game-card-extra--info-genres {
+  display: flex;
+  align-items: center;
+}
+
+.game-card-extra--info-genres--item {
+  display: inline;
+  list-style: none;
+  font-size: 12px;
+  margin: 0 0 0 5px;
+  text-decoration: underline;
+}
+
+.game-card--img {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  width: 250px;
-  height: 150px;
+  width: 270px;
+  height: 160px;
   object-fit: cover;
+}
+
+.game-card--title {
+  margin: 10px 10px 20px;
+}
+
+.game-card-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  height: 20px;
+}
+.game-card-info h4 {
+  text-align: center;
+  border-radius: 5px;
+  padding: 0 8px;
+  font-size: 18px;
+}
+
+.game-card-info--platforms {
+  display: flex;
+  align-items: center;
+}
+.game-card-info--platforms p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.game-card--btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 10px 15px;
+}
+
+.game-card--btns--item {
+  color: #f0f0f0;
+  transition: color 0.3s ease;
+}
+.game-card--btns--item:hover {
+  color: #38ff21;
+  cursor: pointer;
 }
