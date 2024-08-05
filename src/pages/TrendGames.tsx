@@ -17,7 +17,7 @@ export const TrendGames = () => {
   // разобраться с неделей
   // почему-то считает в минус
   const date = `${year}-${month}-${prevWeek},${year}-${month}-${day}`
-  console.log(date)
+  // console.log(date)
   useFilterParams(date)
 
   return (
