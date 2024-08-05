@@ -4,20 +4,11 @@ import { Spin } from 'antd'
 import { LoadingOutlined } from '@ant-design/icons'
 import { GamesRender } from '../components/GamesRender'
 import { useFilterParams } from '../hooks/useFilterParams'
+import { usePastDate } from '../hooks/usePastDate'
 
-export const TrendGames = () => {
+export const LastWeekGames = () => {
   const { error, status, games } = useGamesList()
-
-  const today = new Date()
-  const prevWeek = String(today.getDate() - 7).padStart(2, '0')
-  const day = String(today.getDate()).padStart(2, '0')
-  const month = String(today.getMonth() + 1).padStart(2, '0')
-  const year = today.getFullYear()
-
-  // разобраться с неделей
-  // почему-то считает в минус
-  const date = `${year}-${month}-${prevWeek},${year}-${month}-${day}`
-  // console.log(date)
+  const date = usePastDate(7)
   useFilterParams(date)
 
   return (
@@ -36,7 +27,11 @@ export const TrendGames = () => {
         {error && <h1>Error: {error}</h1>}
         {status === 'received' && (
           <div className="games">
-            <GamesRender title="Trending" games={games} />
+            {games.length === 0 ? (
+              <h1>Nothing</h1>
+            ) : (
+              <GamesRender title="Last Week" games={games} />
+            )}
           </div>
         )}
       </>
