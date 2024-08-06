@@ -239,6 +239,10 @@ main {
   cursor: pointer;
 }
 
+.added:hover {
+  color: #ff2121;
+}
+
 .loading-con {
   display: flex;
   justify-content: center;

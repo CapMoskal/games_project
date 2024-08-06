@@ -1,8 +1,13 @@
 import { GiftOutlined, PlusCircleOutlined } from '@ant-design/icons'
-import { Game, useAppDispatch } from '../types'
+
+import { Game, useAppDispatch } from '../../types'
+
 import { MetacriticRaiting } from './MetacriticRaiting'
 import { Platforms } from './Platforms'
-import { addGame } from '../store/my-library/my-library-actions'
+
+import { addGame } from '../../store/my-library/my-library-actions'
+import { GameCardInfo } from './GameCardInfo'
+import { GameCardBtns } from './GameCardBtns'
 
 type Props = {
   games: Game[]
@@ -24,24 +29,13 @@ export const GamesRender = ({ games, title }: Props) => {
                 src={game.background_image}
                 alt={game.name}
               />
-              <div className="game-card-info">
-                <div className="game-card-info--platforms">
-                  <Platforms platforms={game.parent_platforms} />
-                </div>
-                <MetacriticRaiting raiting={game.metacritic} />
-              </div>
+              <GameCardInfo
+                platforms={game.parent_platforms}
+                metacritic={game.metacritic}
+              />
               <h4 className="game-card--title">{game.name}</h4>
-              <div className="game-card--btns">
-                {/* добавить логику, если игра уже в моей библиотеке, 
-                    то будет один значок, если игра не добавлена, то другой */}
-                <PlusCircleOutlined
-                  onClick={() => {
-                    dispatch(addGame(game))
-                  }}
-                  className="game-card--btns--item"
-                />
-                <GiftOutlined className="game-card--btns--item" />
-              </div>
+              <GameCardBtns game={game} />
+              {/* весь экстра вынести в отдельный компонент */}
               <div className="game-card-extra">
                 <div className="game-card-extra--info">
                   <h5 className="game-card-extra--info-title">
