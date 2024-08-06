@@ -32,11 +32,11 @@ export const useFilterParams = (
       ordering: filters.order as QueryParams['ordering'],
       genres: filters.genre as QueryParams['genres'],
       dates: date,
-      // dates: `${year}-01-01,${year}-12-31`,
 
       // page: 1,
       // page_size: 10,
     }
+
     dispatch(setParams(params))
-  }, [dispatch, filters])
+  }, [dispatch, filters, date])
 }

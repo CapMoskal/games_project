@@ -1,38 +1,24 @@
 import { useGamesList } from '../hooks/useAllGamesList'
-import { Filters } from '../components/Filters'
-import { Spin } from 'antd'
-import { LoadingOutlined } from '@ant-design/icons'
-import { GamesRender } from '../components/GamesRender'
+import { useRangeDays } from '../hooks/useRangeDays'
 import { useFilterParams } from '../hooks/useFilterParams'
-import { usePastDate } from '../hooks/usePastDate'
+
+import { Filters } from '../components/Filters'
+import { Loading } from '../components/Loading'
+import { Games } from '../components/Games'
 
 export const LastWeekGames = () => {
   const { error, status, games } = useGamesList()
-  const date = usePastDate(7)
+  const date = useRangeDays(-7)
   useFilterParams(date)
 
   return (
     <div className="games-n-filters">
-      <div className="filters-con">
-        <Filters order platforms />
-      </div>
+      <Filters order platforms />
       <>
-        {status === 'loading' && (
-          <Spin
-            indicator={
-              <LoadingOutlined style={{ color: '#f0f0f0' }} />
-            }
-          />
-        )}
+        {status === 'loading' && <Loading />}
         {error && <h1>Error: {error}</h1>}
         {status === 'received' && (
-          <div className="games">
-            {games.length === 0 ? (
-              <h1>Nothing</h1>
-            ) : (
-              <GamesRender title="Last Week" games={games} />
-            )}
-          </div>
+          <Games title="Last week" games={games} />
         )}
       </>
     </div>

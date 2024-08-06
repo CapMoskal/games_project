@@ -1,12 +1,9 @@
 import { useGamesList } from '../hooks/useAllGamesList'
+import { useFilterParams } from '../hooks/useFilterParams'
 
 import { Filters } from '../components/Filters'
-
-import { LoadingOutlined } from '@ant-design/icons'
-import { Spin } from 'antd'
-
-import { GamesRender } from '../components/GamesRender'
-import { useFilterParams } from '../hooks/useFilterParams'
+import { Loading } from '../components/Loading'
+import { Games } from '../components/Games'
 
 export const AllGamesList = () => {
   const { error, status, games } = useGamesList()
@@ -14,22 +11,12 @@ export const AllGamesList = () => {
 
   return (
     <div className="games-n-filters">
-      <div className="filters-con">
-        <Filters order platforms genre />
-      </div>
+      <Filters order platforms genre />
       <>
-        {status === 'loading' && (
-          <Spin
-            indicator={
-              <LoadingOutlined style={{ color: '#f0f0f0' }} />
-            }
-          />
-        )}
+        {status === 'loading' && <Loading />}
         {error && <h1>Error: {error}</h1>}
         {status === 'received' && (
-          <div className="games">
-            <GamesRender title="All Games" games={games} />
-          </div>
+          <Games title="All Games" games={games} />
         )}
       </>
     </div>
