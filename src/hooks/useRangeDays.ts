@@ -7,9 +7,11 @@ const formatDate = (date: Date) => {
 
 export const useRangeDays = (sub: number) => {
   const today = new Date()
-  const prevDate = new Date()
+  const anotherDay = new Date()
 
-  prevDate.setDate(today.getDate() + sub)
+  anotherDay.setDate(today.getDate() + sub)
 
-  return `${formatDate(prevDate)},${formatDate(today)}`
+  return sub < 0
+    ? `${formatDate(anotherDay)},${formatDate(today)}`
+    : `${formatDate(today)},${formatDate(anotherDay)}`
 }

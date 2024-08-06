@@ -1,14 +1,15 @@
 import { Routes, Route } from 'react-router-dom'
 
 import { Layout } from './components/Layout'
-import { Library } from './components/Library'
 
-import { Wishlist } from './pages/Wishlist'
+import { Library } from './pages/Main/Library'
+import { Wishlist } from './pages/Main/Wishlist'
 import { NotFound } from './pages/NotFound'
 import { GameDetail } from './pages/GameDetail'
-import { AllGamesList } from './pages/AllGamesList'
-import { LastMonthGames } from './pages/LastMonthGames'
-import { LastWeekGames } from './pages/LastWeekGames'
+import { AllGamesList } from './pages/Main/AllGamesList'
+import { LastMonthGames } from './pages/NewReleases/LastMonthGames'
+import { LastWeekGames } from './pages/NewReleases/LastWeekGames'
+import { NextWeekGames } from './pages/NewReleases/NextWeekGames'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/:id" element={<GameDetail />} />
           <Route path="lastMonth" element={<LastMonthGames />} />
           <Route path="lastWeek" element={<LastWeekGames />} />
+          <Route path="nextWeek" element={<NextWeekGames />} />
           <Route path="wishlist" element={<Wishlist />} />
           <Route path="library" element={<Library />} />
           <Route path="*" element={<NotFound />} />

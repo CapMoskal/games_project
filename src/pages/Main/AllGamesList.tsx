@@ -1,9 +1,9 @@
-import { useGamesList } from '../hooks/useAllGamesList'
-import { useFilterParams } from '../hooks/useFilterParams'
+import { useGamesList } from '../../hooks/useAllGamesList'
+import { useFilterParams } from '../../hooks/useFilterParams'
 
-import { Filters } from '../components/Filters'
-import { Loading } from '../components/Loading'
-import { Games } from '../components/Games'
+import { Filters } from '../../components/Filters'
+import { Loading } from '../../components/Loading'
+import { Games } from '../../components/Games'
 
 export const AllGamesList = () => {
   const { error, status, games } = useGamesList()

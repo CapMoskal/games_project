@@ -1,5 +1,6 @@
 import {
   DatabaseFilled,
+  FastForwardOutlined,
   FireFilled,
   GiftFilled,
   InboxOutlined,
@@ -41,6 +42,11 @@ export const sidebarItems: TSidebar = {
         to: 'lastWeek',
         icon: <FireFilled className="icon-con" />,
         selectTitle: 'Last week',
+      },
+      {
+        to: 'nextWeek',
+        icon: <FastForwardOutlined className="icon-con" />,
+        selectTitle: 'Next week',
       },
     ],
   },
