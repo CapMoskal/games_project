@@ -5,11 +5,11 @@ const formatDate = (date: Date) => {
   return `${year}-${month}-${day}`
 }
 
-export const usePastDate = (sub: number) => {
+export const useRangeDays = (sub: number) => {
   const today = new Date()
   const prevDate = new Date()
 
-  prevDate.setDate(today.getDate() - sub)
+  prevDate.setDate(today.getDate() + sub)
 
   return `${formatDate(prevDate)},${formatDate(today)}`
 }

@@ -1,37 +1,24 @@
 import { useGamesList } from '../hooks/useAllGamesList'
+import { useFilterParams } from '../hooks/useFilterParams'
 
 import { Filters } from '../components/Filters'
-import { Spin } from 'antd'
-import { LoadingOutlined } from '@ant-design/icons'
-import { GamesRender } from '../components/GamesRender'
-import { useFilterParams } from '../hooks/useFilterParams'
-import { usePastDate } from '../hooks/usePastDate'
+import { useRangeDays } from '../hooks/useRangeDays'
+import { Loading } from '../components/Loading'
+import { Games } from '../components/Games'
 
 export const LastMonthGames = () => {
   const { error, status, games } = useGamesList()
-
-  const date = usePastDate(30)
-
+  const date = useRangeDays(-30)
   useFilterParams(date)
 
   return (
     <div className="games-n-filters">
-      <div className="filters-con">
-        <Filters order platforms />
-      </div>
+      <Filters order platforms />
       <>
-        {status === 'loading' && (
-          <Spin
-            indicator={
-              <LoadingOutlined style={{ color: '#f0f0f0' }} />
-            }
-          />
-        )}
+        {status === 'loading' && <Loading />}
         {error && <h1>Error: {error}</h1>}
         {status === 'received' && (
-          <div className="games">
-            <GamesRender title="Last Month" games={games} />
-          </div>
+          <Games title="Last Month" games={games} />
         )}
       </>
     </div>
