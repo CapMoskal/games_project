@@ -1,21 +1,22 @@
 import { GenresType } from '../../types'
 import {
   CLEAR_FILTERS,
-  FiltersActionsType,
   SET_DATE,
   SET_GENRE,
   SET_ORDER,
   SET_PLATFORM,
 } from './filters-actions'
 
-interface initialStateType {
+import { FiltersActionsType } from './filters-types'
+
+interface TFiltersState {
   order: string | null
   platform: string | null
   genre: GenresType | null
   date: string | null
 }
 
-const initialState: initialStateType = {
+const initialState: TFiltersState = {
   order: 'raiting',
   platform: null,
   genre: null,
