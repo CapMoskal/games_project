@@ -83,44 +83,19 @@ export const Filters = ({
     />
   )
 
-  //   const selectorsList = [
-  //     <Select
-  //       defaultValue="raiting"
-  //       style={{ width: 130, marginRight: 5 }}
-  //       onChange={(value) => {
-  //         dispatch(setOrder(value))
-  //       }}
-  //       options={orderOptions}
-  //     />,
-  //     <Select
-  //       defaultValue="allPlatforms"
-  //       style={{ width: 140, marginRight: 5 }}
-  //       onChange={(value) => {
-  //         dispatch(setPlatform(value))
-  //       }}
-  //       options={platformOptions}
-  //     />,
-  //     <Select
-  //       defaultValue="allGenre"
-  //       style={{ width: 130, marginRight: 5 }}
-  //       onChange={(value) => {
-  //         dispatch(setGenre(value))
-  //       }}
-  //       options={genreOptions}
-  //     />,
-  //   ]
-
   return (
-    <ConfigProvider
-      theme={{
-        components: {
-          Select: selectStyles,
-        },
-      }}
-    >
-      {order && orderS}
-      {genre && genreS}
-      {platforms && platformsS}
-    </ConfigProvider>
+    <div className="filters-con">
+      <ConfigProvider
+        theme={{
+          components: {
+            Select: selectStyles,
+          },
+        }}
+      >
+        {order && orderS}
+        {genre && genreS}
+        {platforms && platformsS}
+      </ConfigProvider>
+    </div>
   )
 }

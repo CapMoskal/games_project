@@ -1,5 +1,6 @@
 import {
   DatabaseFilled,
+  FastForwardOutlined,
   FireFilled,
   GiftFilled,
   InboxOutlined,
@@ -13,7 +14,7 @@ export const sidebarItems: TSidebar = {
     title: 'Main',
     selects: [
       {
-        to: 'allGames',
+        to: '/',
         icon: <DatabaseFilled className="icon-con" />,
         selectTitle: 'All games',
       },
@@ -33,14 +34,19 @@ export const sidebarItems: TSidebar = {
     title: 'New Releases',
     selects: [
       {
-        to: '/',
-        icon: <FireFilled className="icon-con" />,
-        selectTitle: 'Trending',
-      },
-      {
         to: 'lastMonth',
         icon: <StarFilled className="icon-con" />,
         selectTitle: 'Last 30 days',
+      },
+      {
+        to: 'lastWeek',
+        icon: <FireFilled className="icon-con" />,
+        selectTitle: 'Last week',
+      },
+      {
+        to: 'nextWeek',
+        icon: <FastForwardOutlined className="icon-con" />,
+        selectTitle: 'Next week',
       },
     ],
   },
