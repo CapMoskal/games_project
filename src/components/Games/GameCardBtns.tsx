@@ -21,6 +21,8 @@ export const GameCardBtns = ({ game }: Props) => {
   const library = useSelector((state: RootState) => state.library)
   const dispatch = useAppDispatch()
 
+  // почему-то при перезагрузке страницы все равно рендерит
+  // второй вариант, т.е. игры в библиотеке нет
   return (
     <div className="game-card--btns">
       {library.includes(game) ? (
