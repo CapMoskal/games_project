@@ -5,12 +5,6 @@ import {
   SET_LOADING,
 } from './all-games-actions'
 
-export {
-  SET_ALL_GAMES,
-  SET_ERROR,
-  SET_LOADING,
-} from './all-games-actions'
-
 const initialState: AllGamesListState = {
   games: [],
   status: 'idle',
