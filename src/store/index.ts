@@ -18,6 +18,7 @@ const composeEnhancer =
 const persistConfig = {
   key: 'root',
   storage,
+  // whitelist: ['library'],
   whitelist: [],
 }
 

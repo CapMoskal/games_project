@@ -1,4 +1,4 @@
-import { Game } from '../types'
+import { Game } from '../../types'
 import { GamesRender } from './GamesRender'
 import { Nothing } from './Nothing'
 

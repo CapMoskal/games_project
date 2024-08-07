@@ -1,4 +1,4 @@
-import { ParentPlatformType } from '../types/ParentPlatformsType'
+import { ParentPlatformType } from '../../types/ParentPlatformsType'
 import { PlatformIcon } from './PlatformIcon'
 
 type Props = {
