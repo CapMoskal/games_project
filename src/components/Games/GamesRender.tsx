@@ -28,12 +28,10 @@ export const GamesRender = ({ games, title }: Props) => (
             />
             <h4 className="game-card--title">{game.name}</h4>
             <GameCardBtns game={game} />
-            {/* весь экстра вынести в отдельный компонент */}
             <GameCardExtra
               released={game.released}
               genres={game.genres}
             />
-            {/*  */}
           </div>
         </div>
       ))}
