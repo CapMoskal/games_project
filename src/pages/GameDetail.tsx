@@ -5,6 +5,7 @@ import { RootState } from '../store/rootReducer'
 
 import { useGameDetail } from '../hooks/useGameDetail'
 import { GameContent } from '../components/GameDetail/GameContent'
+import { Loading } from '../components/Games/Loading'
 
 export const GameDetail = () => {
   const { id } = useParams()
@@ -15,11 +16,18 @@ export const GameDetail = () => {
 
   return (
     <div className="game-page">
-      <div
-        className="game-page--background-img"
-        style={{ backgroundImage: `url(${game.background_image})` }}
-      ></div>
-      <GameContent game={game} screenshots={screenshots} />
+      {status === 'loading' ?? <Loading />}
+      {status === 'received' && (
+        <>
+          <div
+            className="game-page--background-img"
+            style={{
+              backgroundImage: `url(${game.background_image})`,
+            }}
+          ></div>
+          <GameContent game={game} screenshots={screenshots} />
+        </>
+      )}
     </div>
   )
 }

@@ -9,7 +9,7 @@ type Props = {
 export const Platforms = ({ platforms, extra }: Props) => {
   return (
     <div className="platforms-icons">
-      {platforms.map((elem, index) => {
+      {platforms?.map((elem, index) => {
         {
           if (index < 3) {
             return (
