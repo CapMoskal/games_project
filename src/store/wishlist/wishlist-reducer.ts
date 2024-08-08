@@ -1,12 +1,12 @@
 import { Game } from '../../types'
-import { ADD_GAME, REMOVE_GAME } from './my-library-actions'
-import { TMyLibraryActions } from './my-library-types'
+import { ADD_GAME, REMOVE_GAME } from './wishlist-actions'
+import { TWishlistActions } from './wishlist-types'
 
 const initialState: Game[] = []
 
-export const myLibraryReducer = (
+export const wishlistReducer = (
   state = initialState,
-  action: TMyLibraryActions
+  action: TWishlistActions
 ) => {
   switch (action.type) {
     case ADD_GAME:

@@ -9,14 +9,18 @@ import {
   TAddGameLibrary,
   TRemoveGameLibrary,
 } from '../../../store/my-library/my-library-types'
+import {
+  TAddGameWishlist,
+  TRemoveGameWishlist,
+} from '../../../store/wishlist/wishlist-types'
 
 interface Props {
   game: Game
   title: string
   icon: JSX.Element
   isInlist: (game: Game) => boolean
-  add: (game: Game) => TAddGameLibrary // | тип добавления в вишлист
-  remove: (game: Game) => TRemoveGameLibrary // | тип remove from вишлист
+  add: (game: Game) => TAddGameLibrary | TAddGameWishlist
+  remove: (game: Game) => TRemoveGameLibrary | TRemoveGameWishlist
 }
 
 const icons = {
