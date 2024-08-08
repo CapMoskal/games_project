@@ -12,7 +12,7 @@ const initialState: AllGamesListState = {
 }
 
 export const allGamesReducer = (
-  state: AllGamesListState = initialState,
+  state = initialState,
   action: AllGamesActionsType
 ): AllGamesListState => {
   switch (action.type) {

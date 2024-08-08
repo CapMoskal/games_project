@@ -39,6 +39,7 @@
 }
 
 .sidebar {
+  min-height: 100vh;
   min-width: 150px;
   padding: 15px;
   display: flex;
@@ -256,4 +257,36 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.game-page {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  position: relative;
+  margin: 0;
+}
+.game-page--background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 350px;
+  background-size: cover;
+  /* background-position: center; */
+  filter: brightness(0.2);
+  z-index: -1;
+  box-shadow: inset 0px -10px 90px #171718;
+}
+
+.game-page--content {
+  border: 1px solid white;
+
+  z-index: 2;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  display: flex;
 }

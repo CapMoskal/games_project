@@ -1,11 +1,12 @@
-import { SET_ERROR, SET_GAME, SET_LOADING } from './detail-actions'
-import { TDetailActions, TGameDetail } from './detail-types'
-
-interface TInitialState {
-  game: TGameDetail
-  error: string | null
-  status: 'idle' | 'received' | 'rejected' | 'loading'
-}
+import {
+  CLEAR_DETAIL,
+  SET_ERROR,
+  SET_ERROR_SCREENSHOTS,
+  SET_GAME,
+  SET_LOADING,
+  SET_SCREENSHOTS,
+} from './detail-actions'
+import { TDetailActions, TInitialState } from './detail-types'
 
 const initialState: TInitialState = {
   game: {
@@ -22,6 +23,11 @@ const initialState: TInitialState = {
     released: '',
     platforms: [],
   },
+  screenshots: {
+    count: 0,
+    results: [],
+  },
+  error_screenshots: null,
   error: null,
   status: 'idle',
 }
@@ -42,6 +48,7 @@ export const detailReducer = (
         ...state,
         status: 'loading',
         error: null,
+        error_screenshots: null,
       }
     case SET_GAME:
       return {
@@ -49,6 +56,18 @@ export const detailReducer = (
         status: 'received',
         game: action.payload,
       }
+    case SET_SCREENSHOTS:
+      return {
+        ...state,
+        screenshots: action.payload,
+      }
+    case SET_ERROR_SCREENSHOTS:
+      return {
+        ...state,
+        error_screenshots: action.payload,
+      }
+    case CLEAR_DETAIL:
+      return initialState
     default:
       return state
   }

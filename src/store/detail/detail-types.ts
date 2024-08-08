@@ -1,9 +1,11 @@
 import { Platform } from '../../types'
 import {
+  CLEAR_DETAIL,
   SET_ERROR,
+  SET_ERROR_SCREENSHOTS,
   SET_GAME,
   SET_LOADING,
-  TGameDetail,
+  SET_SCREENSHOTS,
 } from './detail-actions'
 
 interface TSetGame {
@@ -17,7 +19,24 @@ interface TSetError {
   type: typeof SET_ERROR
   payload: string
 }
-export type TDetailActions = TSetGame | TSetError | TsetLoading
+interface TSetScreenshots {
+  type: typeof SET_SCREENSHOTS
+  payload: TScreenshotsResponse
+}
+interface TSetErrorScreenshots {
+  type: typeof SET_ERROR_SCREENSHOTS
+  payload: string
+}
+interface TClearDetail {
+  type: typeof CLEAR_DETAIL
+}
+export type TDetailActions =
+  | TSetGame
+  | TSetError
+  | TsetLoading
+  | TSetScreenshots
+  | TSetErrorScreenshots
+  | TClearDetail
 
 export interface TGameDetail {
   id: number
@@ -32,4 +51,24 @@ export interface TGameDetail {
   rating_top: number
   playtime: number
   platforms: Platform[]
+}
+
+export interface TScreenshotsResults {
+  id: number
+  image: string
+  width: number
+  height: number
+}
+
+export interface TScreenshotsResponse {
+  count: number
+  results: TScreenshotsResults[]
+}
+
+export interface TInitialState {
+  game: TGameDetail
+  screenshots: TScreenshotsResponse
+  error_screenshots: string | null
+  error: string | null
+  status: 'idle' | 'received' | 'rejected' | 'loading'
 }
