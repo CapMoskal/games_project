@@ -1,9 +1,17 @@
 const platformIcons: { [key: string]: string } = {
   PC: 'src/icons/pc_icon_white.svg',
+
   Xbox: 'src/icons/xbox_icon_white.svg',
+  'Xbox Series S/X': 'src/icons/xbox_icon_white.svg',
+
   PlayStation: 'src/icons/ps_icon_white.svg',
-  Nintendo: 'src/icons/nintendo_icon_white.svg',
+  'PlayStation 4': 'src/icons/ps_icon_white.svg',
+  'PlayStation 5': 'src/icons/ps_icon_white.svg',
+
   'Apple Macintosh': 'src/icons/apple_icon_white.svg',
+  macOS: 'src/icons/apple_icon_white.svg',
+
+  Nintendo: 'src/icons/nintendo_icon_white.svg',
   Linux: 'src/icons/linux_icon_white.svg',
   Android: 'src/icons/android_icon_white.svg',
   iOS: 'src/icons/ios_icon_white.svg',

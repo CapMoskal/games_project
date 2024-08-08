@@ -1,4 +1,5 @@
-import { Platform } from '../../types'
+import { Genre, Platform } from '../../types'
+import { ParentPlatformType } from '../../types/ParentPlatformsType'
 import {
   CLEAR_DETAIL,
   SET_ERROR,
@@ -51,7 +52,20 @@ export interface TGameDetail {
   rating_top: number
   playtime: number
   platforms: Platform[]
+  parent_platforms: ParentPlatformType[]
+  genres: Genre[]
+  stores: {
+    id: number
+    store: {
+      id: number
+      name: string
+      domain: string
+    }
+  }
+  developers: 
 }
+// дописать все, что может прийти с запроса (postman)
+
 
 export interface TScreenshotsResults {
   id: number

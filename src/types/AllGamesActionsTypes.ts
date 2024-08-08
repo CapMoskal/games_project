@@ -1,4 +1,5 @@
 import {
+  CLEAR_GAMES,
   SET_ALL_GAMES,
   SET_ERROR,
   SET_LOADING,
@@ -17,8 +18,12 @@ interface SetErrorAction {
   type: typeof SET_ERROR
   payload: string
 }
+interface TClearGames {
+  type: typeof CLEAR_GAMES
+}
 
 export type AllGamesActionsType =
   | SetAllGamesAction
   | SetLoadingAction
   | SetErrorAction
+  | TClearGames

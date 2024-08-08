@@ -11,7 +11,11 @@ import { ALL_GAMES_URL } from '../../config'
 export const SET_ALL_GAMES = '@@ALL-GAMES/SET_ALL_GAMES'
 export const SET_LOADING = '@@ALL-GAMES/SET_LOADING'
 export const SET_ERROR = '@@ALL-GAMES/SET_ERROR'
+export const CLEAR_GAMES = '@@ALL-GAMES/CLEAR_GAMES'
 
+export const clearGames = () => ({
+  type: CLEAR_GAMES,
+})
 const setError = (err: string): AllGamesActionsType => ({
   type: SET_ERROR,
   payload: err,

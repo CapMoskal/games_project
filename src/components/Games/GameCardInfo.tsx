@@ -10,7 +10,7 @@ interface Props {
 export const GameCardInfo = ({ platforms, metacritic }: Props) => (
   <div className="game-card-info">
     <div className="game-card-info--platforms">
-      <Platforms platforms={platforms} />
+      <Platforms extra={true} platforms={platforms} />
     </div>
     <MetacriticRaiting raiting={metacritic} />
   </div>

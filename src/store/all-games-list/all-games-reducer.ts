@@ -1,5 +1,6 @@
 import { AllGamesActionsType, AllGamesListState } from '../../types'
 import {
+  CLEAR_GAMES,
   SET_ALL_GAMES,
   SET_ERROR,
   SET_LOADING,
@@ -35,6 +36,8 @@ export const allGamesReducer = (
         status: 'rejected',
         error: action.payload,
       }
+    case CLEAR_GAMES:
+      return initialState
     default:
       return state
   }
