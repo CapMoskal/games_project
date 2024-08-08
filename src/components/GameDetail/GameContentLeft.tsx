@@ -1,22 +1,22 @@
 import { TGameDetail } from '../../store/detail/detail-types'
-import { GameDetailBtns } from './GameDetailBtns'
+import { GameBtns } from './Buttons/GameBtns'
 
-import { GameDetailInfo } from './GameDetailInfo'
+import { GameInfo } from './GameInfo'
 
 interface Props {
   game: TGameDetail
 }
 
-export const GameDetailLeft = ({ game }: Props) => {
+export const GameContentLeft = ({ game }: Props) => {
   return (
     <div className="game-page--content-left">
-      <GameDetailInfo
+      <GameInfo
         released={game.released}
         platforms={game.platforms}
         playtime={game.playtime}
         name_original={game.name_original}
       />
-      <GameDetailBtns id={game.id} />
+      <GameBtns game={game} />
     </div>
   )
 }

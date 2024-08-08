@@ -8,7 +8,7 @@ export interface Game {
   released: string
   background_image: string
   rating: number
-  ratings_count: number
+  ratings_count?: number
   genres: Genre[]
   platforms: Platform[]
   metacritic: number

@@ -39,6 +39,35 @@ export type TDetailActions =
   | TSetErrorScreenshots
   | TClearDetail
 
+interface TStores {
+  id: number
+  store: {
+    id: number
+    name: string
+    domain: string
+  }
+}
+
+interface TDevelopers {
+  id: number
+  name: string
+}
+
+interface TTags {
+  id: number
+  name: string
+}
+
+interface TPublishers {
+  id: number
+  name: string
+}
+
+interface TEsrbRaiting {
+  id: number
+  name: string
+}
+
 export interface TGameDetail {
   id: number
   name: string
@@ -54,18 +83,12 @@ export interface TGameDetail {
   platforms: Platform[]
   parent_platforms: ParentPlatformType[]
   genres: Genre[]
-  stores: {
-    id: number
-    store: {
-      id: number
-      name: string
-      domain: string
-    }
-  }
-  developers: 
+  stores: TStores[]
+  developers: TDevelopers[]
+  tages: TTags[]
+  publichers: TPublishers[]
+  esrb_raiting: TEsrbRaiting
 }
-// дописать все, что может прийти с запроса (postman)
-
 
 export interface TScreenshotsResults {
   id: number

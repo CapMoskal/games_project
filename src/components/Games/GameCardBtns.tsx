@@ -5,8 +5,8 @@ import {
 } from '@ant-design/icons'
 
 import {
-  addGame,
-  removeGame,
+  addToLibrary,
+  removeFromLibrary,
 } from '../../store/my-library/my-library-actions'
 
 import { Game, useAppDispatch } from '../../types'
@@ -27,13 +27,13 @@ export const GameCardBtns = ({ game }: Props) => {
     <div className="game-card--btns">
       {library.includes(game) ? (
         <CheckCircleOutlined
-          onClick={() => dispatch(removeGame(game))}
+          onClick={() => dispatch(removeFromLibrary(game))}
           className="game-card--btns--item added"
         />
       ) : (
         <PlusCircleOutlined
           onClick={() => {
-            dispatch(addGame(game))
+            dispatch(addToLibrary(game))
           }}
           className="game-card--btns--item"
         />

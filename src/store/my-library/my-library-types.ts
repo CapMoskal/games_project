@@ -1,13 +1,13 @@
 import { Game } from '../../types'
 import { ADD_GAME, REMOVE_GAME } from './my-library-actions'
 
-export interface TAddGame {
+export interface TAddGameLibrary {
   type: typeof ADD_GAME
   payload: Game
 }
-export interface TRemoveGame {
+export interface TRemoveGameLibrary {
   type: typeof REMOVE_GAME
   payload: Game
 }
 
-export type TMyLibraryActions = TAddGame | TRemoveGame
+export type TMyLibraryActions = TAddGameLibrary | TRemoveGameLibrary

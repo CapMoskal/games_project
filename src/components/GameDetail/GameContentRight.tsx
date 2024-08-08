@@ -4,7 +4,7 @@ interface Props {
   screenshots: TScreenshotsResponse['results']
 }
 
-export const GameDetailRight = ({ screenshots }: Props) => {
+export const GameContentRight = ({ screenshots }: Props) => {
   return (
     <div className="game-page--content-right">
       <div className="screenshots-con">

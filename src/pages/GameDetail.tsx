@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { RootState } from '../store/rootReducer'
 
 import { useGameDetail } from '../hooks/useGameDetail'
-import { GameDetail } from '../components/GameDetail/GameDetail'
+import { GameContent } from '../components/GameDetail/GameContent'
 
 export const GameDetail = () => {
   const { id } = useParams()
@@ -19,7 +19,7 @@ export const GameDetail = () => {
         className="game-page--background-img"
         style={{ backgroundImage: `url(${game.background_image})` }}
       ></div>
-      <GameDetail game={game} screenshots={screenshots} />
+      <GameContent game={game} screenshots={screenshots} />
     </div>
   )
 }

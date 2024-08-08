@@ -8,7 +8,7 @@ interface Props {
   name_original: string
 }
 
-export const GameDetailInfo = ({
+export const GameInfo = ({
   released,
   platforms,
   playtime,
