@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { Game } from '../../types'
 
-import { GameCardBtns } from './GameCardBtns'
+import { GameCardBtns } from './buttons/GameCardBtns'
 import { GameCardExtra } from './GameCardExtra'
 import { GameCardInfo } from './GameCardInfo'
 
