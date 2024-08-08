@@ -1,9 +1,4 @@
-import {
-  CheckCircleOutlined,
-  GiftOutlined,
-  PlusCircleOutlined,
-} from '@ant-design/icons'
-import { addToLibrary } from '../../../store/my-library/my-library-actions'
+import { CheckCircleOutlined } from '@ant-design/icons'
 import { Game, useAppDispatch } from '../../../types'
 import {
   TAddGameLibrary,
@@ -21,12 +16,6 @@ interface Props {
   isInlist: (game: Game) => boolean
   add: (game: Game) => TAddGameLibrary | TAddGameWishlist
   remove: (game: Game) => TRemoveGameLibrary | TRemoveGameWishlist
-}
-
-const icons = {
-  addLibrary: <PlusCircleOutlined />,
-  addWishlist: <GiftOutlined />,
-  remove: <CheckCircleOutlined />,
 }
 
 export const GameBtn = ({
