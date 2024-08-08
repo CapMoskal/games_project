@@ -39,7 +39,7 @@ export type TDetailActions =
   | TSetErrorScreenshots
   | TClearDetail
 
-interface TStores {
+export interface TStores {
   id: number
   store: {
     id: number
@@ -48,22 +48,22 @@ interface TStores {
   }
 }
 
-interface TDevelopers {
+export interface TDevelopers {
   id: number
   name: string
 }
 
-interface TTags {
+export interface TTags {
   id: number
   name: string
 }
 
-interface TPublishers {
+export interface TPublishers {
   id: number
   name: string
 }
 
-interface TEsrbRaiting {
+export interface TEsrbRaiting {
   id: number
   name: string
 }
@@ -85,7 +85,7 @@ export interface TGameDetail {
   genres: Genre[]
   stores: TStores[]
   developers: TDevelopers[]
-  tages: TTags[]
+  tags: TTags[]
   publichers: TPublishers[]
   esrb_raiting: TEsrbRaiting
 }

@@ -1,5 +1,6 @@
 import { TGameDetail } from '../../store/detail/detail-types'
 import { GameBtns } from './Buttons/GameBtns'
+import { GameExtraInfo } from './ExtraInfo/GameExtraInfo'
 import { GameAbout } from './GameAbout'
 
 import { GameInfo } from './GameInfo'
@@ -21,6 +22,15 @@ export const GameContentLeft = ({ game }: Props) => {
       <GameBtns game={game} />
       {/* <GameTops /> */}
       <GameAbout description={game.description} />
+      <GameExtraInfo
+        platforms={game.platforms}
+        metacritic={game.metacritic}
+        genres={game.genres}
+        developers={game.developers}
+        publichers={game.publichers}
+        esrb_raiting={game.esrb_raiting}
+        tags={game.tags}
+      />
     </div>
   )
 }
