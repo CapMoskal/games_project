@@ -1,16 +1,50 @@
-import { TGameDetail } from '../../store/detail/detail-types'
-import { GameBtns } from './Buttons/GameBtns'
-import { GameExtraInfo } from './ExtraInfo/GameExtraInfo'
-import { GameAbout } from './GameAbout'
+import {
+  TDevelopers,
+  TEsrbRating,
+  TGameDetail,
+  TPublishers,
+  TTags,
+} from '../../store/detail/detail-types'
 
 import { GameInfo } from './GameInfo'
-import { GameTops } from './GameTops'
+import { GameBtns } from './Buttons/GameBtns'
+import { GameAbout } from './GameAbout'
+import { GameExtraInfo } from './ExtraInfo/GameExtraInfo'
+import { Genre, Platform } from '../../types'
 
 interface Props {
   game: TGameDetail
 }
 
+export type TExtraInfo =
+  | Genre[]
+  | TDevelopers[]
+  | TPublishers[]
+  | TTags[]
+  | Platform[]
+  | number
+  | string
+  | TEsrbRating
+
+export interface TExtraInfoObj {
+  [key: string]: TExtraInfo
+}
+
 export const GameContentLeft = ({ game }: Props) => {
+  const extraInfoObj: TExtraInfoObj = {
+    Platforms: game.platforms,
+    Metascore: game.metacritic,
+
+    Genres: game.genres,
+    Developers: game.developers,
+    Publishers: game.publichers,
+    Tags: game.tags,
+
+    'Age Raiting': game.esrb_rating,
+
+    'Released date': game.released,
+  }
+
   return (
     <div className="game-page--content-left">
       <GameInfo
@@ -22,15 +56,7 @@ export const GameContentLeft = ({ game }: Props) => {
       <GameBtns game={game} />
       {/* <GameTops /> */}
       <GameAbout description={game.description} />
-      <GameExtraInfo
-        platforms={game.platforms}
-        metacritic={game.metacritic}
-        genres={game.genres}
-        developers={game.developers}
-        publichers={game.publichers}
-        esrb_raiting={game.esrb_raiting}
-        tags={game.tags}
-      />
+      <GameExtraInfo extraInfoObj={extraInfoObj} />
     </div>
   )
 }

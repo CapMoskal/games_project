@@ -3,15 +3,15 @@ interface metacriticRaitingType {
 }
 
 const greenStyle = {
-  border: '1px solid green',
+  borderColor: 'green',
   color: 'green',
 }
 const yellowStyle = {
-  border: '1px solid yellow',
+  borderColor: 'yellow',
   color: 'yellow',
 }
 const redStyle = {
-  border: '1px solid red',
+  borderColor: 'red',
   color: 'red',
 }
 
@@ -21,10 +21,22 @@ export const MetacriticRaiting: React.FC<metacriticRaitingType> = ({
   if (!raiting) {
     return <h4></h4>
   } else if (raiting > 74) {
-    return <h4 style={greenStyle}>{raiting}</h4>
+    return (
+      <h4 className="metascore" style={greenStyle}>
+        {raiting}
+      </h4>
+    )
   } else if (raiting > 49) {
-    return <h4 style={yellowStyle}>{raiting}</h4>
+    return (
+      <h4 className="metascore" style={yellowStyle}>
+        {raiting}
+      </h4>
+    )
   } else {
-    return <h4 style={redStyle}>{raiting}</h4>
+    return (
+      <h4 className="metascore" style={redStyle}>
+        {raiting}
+      </h4>
+    )
   }
 }

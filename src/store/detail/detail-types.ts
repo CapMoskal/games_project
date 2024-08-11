@@ -63,7 +63,7 @@ export interface TPublishers {
   name: string
 }
 
-export interface TEsrbRaiting {
+export interface TEsrbRating {
   id: number
   name: string
 }
@@ -87,7 +87,7 @@ export interface TGameDetail {
   developers: TDevelopers[]
   tags: TTags[]
   publichers: TPublishers[]
-  esrb_raiting: TEsrbRaiting
+  esrb_rating: TEsrbRating
 }
 
 export interface TScreenshotsResults {

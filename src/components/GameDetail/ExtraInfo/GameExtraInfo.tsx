@@ -1,31 +1,19 @@
-import {
-  TDevelopers,
-  TEsrbRaiting,
-  TPublishers,
-  TTags,
-} from '../../../store/detail/detail-types'
-import { Genre, Platform } from '../../../types'
+import { TExtraInfoObj } from '../GameContentLeft'
+import { ExtraInfoRender } from './ExtraInfoRender'
 
 interface Props {
-  platforms: Platform[]
-  metacritic: number
-  genres: Genre[]
-  developers: TDevelopers[]
-  publichers: TPublishers[]
-  esrb_raiting: TEsrbRaiting
-  tags: TTags[]
+  extraInfoObj: TExtraInfoObj
 }
 
-export const GameExtraInfo = ({
-  platforms,
-  metacritic,
-  genres,
-  developers,
-  publichers,
-  esrb_raiting,
-  tages,
-}: Props) => {
-    return (
-        // сделать вывод компонентов. смотреть пример на ровг
-    )
+export const GameExtraInfo = ({ extraInfoObj }: Props) => {
+  return (
+    <div className="game-page--extra-con">
+      {Object.keys(extraInfoObj).map((key) => (
+        <div key={key} className="game-page--extra-card">
+          <h3 className="game-page--extra-title">{key}</h3>
+          <ExtraInfoRender title={key} render={extraInfoObj[key]} />
+        </div>
+      ))}
+    </div>
+  )
 }
