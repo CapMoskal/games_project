@@ -5,5 +5,5 @@ interface Props {
 }
 
 export const ExtraInfoAge = ({ render }: Props) => {
-  return <p>{render.name}</p>
+  return <p className="game-page--extra-text">{render.name}</p>
 }

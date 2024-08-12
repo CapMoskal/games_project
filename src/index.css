@@ -225,6 +225,7 @@ main {
   border-radius: 5px;
   padding: 0 8px;
   font-size: 18px;
+  margin: 0 0 0 10px;
 }
 
 .platforms-icons {
@@ -294,11 +295,9 @@ body {
   padding: 10px;
   text-align: center;
   display: flex;
+  justify-content: space-between;
 }
 
-.game-page--content-left {
-  max-width: 380px;
-}
 .game-page--content-left,
 .game-page--content-right {
   width: 50%;
@@ -355,7 +354,7 @@ body {
 .game-page--btns-btn {
   font-size: 35px;
   padding: 5px 10px;
-  border: 1px solid white;
+  border: 1px solid #f0f0f0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -417,23 +416,44 @@ body {
 }
 
 .game-page--extra-con {
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
 
 .game-page--extra-card {
-  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.game-card-medium {
+  width: 260px;
+}
+.game-card-large {
+  width: 542px;
 }
 
 .game-page--extra-title {
+  color: #333335;
   font-size: 16px;
   margin: 10px;
 }
 
+.game-page--extra-text {
+  font-size: 17px;
+  margin: 0 10px 10px;
+  line-height: 1.2;
+  text-align: start;
+  width: fit-content;
+  font-weight: 500;
+}
+
 .extra-info--span {
-  font-size: 15px;
-  text-decoration: underline;
+  font-size: 16px;
+  /* text-decoration: underline; */
+  border-bottom: 1px solid white;
   margin-right: 5px;
 }
 

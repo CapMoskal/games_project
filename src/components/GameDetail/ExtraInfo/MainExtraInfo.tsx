@@ -11,7 +11,7 @@ interface Props {
 
 export const MainExtraInfo = ({ render }: Props) => {
   return (
-    <p>
+    <p className="game-page--extra-text">
       {render?.map((elem) => (
         <span className="extra-info--span" key={elem.id}>
           {elem.name}

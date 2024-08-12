@@ -2,7 +2,6 @@ import {
   TDevelopers,
   TEsrbRating,
   TGameDetail,
-  TPublishers,
   TTags,
 } from '../../store/detail/detail-types'
 
@@ -19,7 +18,6 @@ interface Props {
 export type TExtraInfo =
   | Genre[]
   | TDevelopers[]
-  | TPublishers[]
   | TTags[]
   | Platform[]
   | number
@@ -34,16 +32,13 @@ export const GameContentLeft = ({ game }: Props) => {
   const extraInfoObj: TExtraInfoObj = {
     Platforms: game.platforms,
     Metascore: game.metacritic,
-
     Genres: game.genres,
-    Developers: game.developers,
-    Publishers: game.publichers,
-    Tags: game.tags,
-
-    'Age Raiting': game.esrb_rating,
-
     'Released date': game.released,
+    'Age Raiting': game.esrb_rating,
+    Developers: game.developers,
+    Tags: game.tags,
   }
+  console.log(game.publichers)
 
   return (
     <div className="game-page--content-left">
