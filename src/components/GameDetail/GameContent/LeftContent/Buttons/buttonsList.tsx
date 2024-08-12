@@ -6,20 +6,20 @@ import { isInWishlist } from './isInWishlist'
 import {
   addToLibrary,
   removeFromLibrary,
-} from '../../../store/my-library/my-library-actions'
+} from '../../../../../store/my-library/my-library-actions'
 import {
   addToWishlist,
   removeFromWishlist,
-} from '../../../store/wishlist/wishlist-actions'
+} from '../../../../../store/wishlist/wishlist-actions'
 import {
   TAddGameLibrary,
   TRemoveGameLibrary,
-} from '../../../store/my-library/my-library-types'
+} from '../../../../../store/my-library/my-library-types'
 import {
   TAddGameWishlist,
   TRemoveGameWishlist,
-} from '../../../store/wishlist/wishlist-types'
-import { Game } from '../../../types'
+} from '../../../../../store/wishlist/wishlist-types'
+import { Game } from '../../../../../types'
 
 interface TBtnsList {
   add: (game: Game) => TAddGameLibrary | TAddGameWishlist

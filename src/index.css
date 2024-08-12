@@ -218,11 +218,14 @@ main {
   padding: 10px;
   height: 20px;
 }
-.game-card-info h4 {
+
+.metascore {
+  border: 1px solid white;
   text-align: center;
   border-radius: 5px;
   padding: 0 8px;
   font-size: 18px;
+  margin: 0 0 0 10px;
 }
 
 .platforms-icons {
@@ -285,13 +288,12 @@ body {
 }
 
 .game-page--content {
-  border: 1px solid white;
-
   z-index: 2;
   color: #fff;
   padding: 10px;
   text-align: center;
   display: flex;
+  justify-content: space-between;
 }
 
 .game-page--content-left,
@@ -306,6 +308,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.game-page--about h3 {
+  margin-bottom: 0;
 }
 
 .content-left-info--mini {
@@ -333,7 +339,7 @@ body {
 .content-left-info-title {
   margin: 0;
   margin-top: 20px;
-  font-size: 65px;
+  font-size: 60px;
   line-height: 1.2;
 }
 
@@ -346,7 +352,7 @@ body {
 .game-page--btns-btn {
   font-size: 35px;
   padding: 5px 10px;
-  border: 1px solid white;
+  border: 1px solid #f0f0f0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -407,9 +413,84 @@ body {
   border-color: #38ff21;
 }
 
+.game-page--extra-con {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.game-page--extra-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.game-card-medium {
+  width: 260px;
+}
+.game-card-large {
+  width: 542px;
+}
+
+.game-page--extra-title {
+  color: #333335;
+  font-size: 16px;
+  margin: 10px;
+}
+
+.game-page--extra-text {
+  font-size: 17px;
+  margin: 0 10px 10px;
+  line-height: 1.2;
+  text-align: start;
+  width: fit-content;
+  font-weight: 500;
+}
+
+.extra-info--span {
+  font-size: 16px;
+  /* text-decoration: underline; */
+  border-bottom: 1px solid white;
+  margin-right: 5px;
+}
+
+.game-page--content-right {
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .screenshots-con {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.screenshots-con--all {
+  width: 414px;
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px auto;
 }
 
 .screenshots {
-  width: 150px;
+  border-radius: 5px;
+  user-select: none;
+}
+.main {
+  width: 450px;
+  height: 253px;
+}
+.mini {
+  width: 200px;
+  height: 113px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  transition: border-color 0.3s ease;
+}
+.mini:hover {
+  border-color: #38ff21;
 }

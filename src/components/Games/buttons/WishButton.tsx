@@ -1,6 +1,6 @@
 import { CheckCircleOutlined, GiftOutlined } from '@ant-design/icons'
 import { Game, useAppDispatch } from '../../../types'
-import { isInWishlist } from '../../GameDetail/Buttons/isInWishlist'
+import { isInWishlist } from '../../GameDetail/GameContent/LeftContent/Buttons/isInWishlist'
 import {
   addToWishlist,
   removeFromWishlist,

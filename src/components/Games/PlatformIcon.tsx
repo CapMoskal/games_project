@@ -3,6 +3,7 @@ const platformIcons: { [key: string]: string } = {
 
   Xbox: 'src/icons/xbox_icon_white.svg',
   'Xbox Series S/X': 'src/icons/xbox_icon_white.svg',
+  'Xbox 360': 'src/icons/xbox_icon_white.svg',
 
   PlayStation: 'src/icons/ps_icon_white.svg',
   'PlayStation 4': 'src/icons/ps_icon_white.svg',
