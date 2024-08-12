@@ -1,10 +1,14 @@
-import { TScreenshotsResponse } from '../../store/detail/detail-types'
+import {
+  TScreenshotsResponse,
+  TStores,
+} from '../../../../store/detail/detail-types'
 
 interface Props {
+  stores: TStores[]
   screenshots: TScreenshotsResponse['results']
 }
 
-export const GameContentRight = ({ screenshots }: Props) => {
+export const GameContentRight = ({ stores, screenshots }: Props) => {
   return (
     <div className="game-page--content-right">
       <div className="screenshots-con">

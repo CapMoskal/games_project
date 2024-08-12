@@ -1,5 +1,5 @@
-import { ParentPlatformType } from '../../types/ParentPlatformsType'
-import { Platforms } from '../Games/Platforms'
+import { ParentPlatformType } from '../../../../types/ParentPlatformsType'
+import { Platforms } from '../../../Games/Platforms'
 
 interface Props {
   released: string

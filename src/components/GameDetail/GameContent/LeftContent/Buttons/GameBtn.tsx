@@ -1,13 +1,13 @@
 import { CheckCircleOutlined } from '@ant-design/icons'
-import { Game, useAppDispatch } from '../../../types'
+import { Game, useAppDispatch } from '../../../../../types'
 import {
   TAddGameLibrary,
   TRemoveGameLibrary,
-} from '../../../store/my-library/my-library-types'
+} from '../../../../../store/my-library/my-library-types'
 import {
   TAddGameWishlist,
   TRemoveGameWishlist,
-} from '../../../store/wishlist/wishlist-types'
+} from '../../../../../store/wishlist/wishlist-types'
 
 interface Props {
   game: Game

@@ -3,13 +3,13 @@ import {
   TEsrbRating,
   TGameDetail,
   TTags,
-} from '../../store/detail/detail-types'
+} from '../../../../store/detail/detail-types'
+import { Genre, Platform } from '../../../../types'
 
-import { GameInfo } from './GameInfo'
 import { GameBtns } from './Buttons/GameBtns'
-import { GameAbout } from './GameAbout'
 import { GameExtraInfo } from './ExtraInfo/GameExtraInfo'
-import { Genre, Platform } from '../../types'
+import { GameAbout } from './GameAbout'
+import { GameInfo } from './GameInfo'
 
 interface Props {
   game: TGameDetail

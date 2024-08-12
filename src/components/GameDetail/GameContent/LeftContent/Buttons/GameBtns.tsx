@@ -1,4 +1,4 @@
-import { Game } from '../../../types'
+import { Game } from '../../../../../types'
 import { btnsList } from './buttonsList'
 import { GameBtn } from './GameBtn'
 

@@ -3,7 +3,7 @@ import {
   PlusCircleOutlined,
 } from '@ant-design/icons'
 import { Game, useAppDispatch } from '../../../types'
-import { isInLibrary } from '../../GameDetail/Buttons/isInLibrary'
+import { isInLibrary } from '../../GameDetail/GameContent/LeftContent/Buttons/isInLibrary'
 import {
   addToLibrary,
   removeFromLibrary,
