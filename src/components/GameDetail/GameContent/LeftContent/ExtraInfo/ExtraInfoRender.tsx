@@ -3,11 +3,11 @@ import {
   TEsrbRating,
   TPublishers,
   TTags,
-} from '../../../store/detail/detail-types'
-import { Genre, Platform } from '../../../types'
+} from '../../../../../store/detail/detail-types'
+import { Genre, Platform } from '../../../../../types'
+import { MetacriticRaiting } from '../../../../Games/MetacriticRaiting'
 import { TExtraInfo } from '../GameContentLeft'
 
-import { MetacriticRaiting } from '../../Games/MetacriticRaiting'
 import { ExtraInfoAge } from './ExtraInfoAge'
 import { MainExtraInfo } from './MainExtraInfo'
 import { PlatformsExtraInfo } from './PlatformsExtraInfo'

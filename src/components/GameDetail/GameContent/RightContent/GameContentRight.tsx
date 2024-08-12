@@ -2,6 +2,7 @@ import {
   TScreenshotsResponse,
   TStores,
 } from '../../../../store/detail/detail-types'
+import { ScreenshotsRender } from './ScreenshotsRender'
 
 interface Props {
   stores: TStores[]
@@ -11,15 +12,7 @@ interface Props {
 export const GameContentRight = ({ stores, screenshots }: Props) => {
   return (
     <div className="game-page--content-right">
-      <div className="screenshots-con">
-        {screenshots.map((elem) => (
-          <img
-            key={elem.id}
-            className="screenshots"
-            src={`${elem.image}`}
-          />
-        ))}
-      </div>
+      <ScreenshotsRender screenshots={screenshots} />
     </div>
   )
 }
