@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { NavBar } from './NavBar'
+import { GameSearch } from './SearchBar/GameSearch'
 
 export const Header = () => {
   return (
@@ -7,10 +8,7 @@ export const Header = () => {
       <NavLink to="" className="logo">
         GamesWhat?
       </NavLink>
-      <form action="">
-        <input type="text" />
-        <button>search</button>
-      </form>
+      <GameSearch />
       <NavBar />
     </header>
   )

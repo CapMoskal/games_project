@@ -3,7 +3,7 @@ export const platformIcons: { [key: string]: string } = {
 
   Steam: 'src/icons/steam_white_icon.svg',
 
-  Gog: 'src/icons/gog_white_icon.svg',
+  GOG: 'src/icons/gog_white_icon.svg',
 
   PC: 'src/icons/pc_icon_white.svg',
 
