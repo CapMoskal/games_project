@@ -11,7 +11,7 @@ import {
 const platformOptions = [
   { value: null, label: 'All platforms' },
   { value: '1', label: 'PC' },
-  { value: '2', label: 'Playstation' },
+  { value: '2', label: 'PlayStation' },
   { value: '3', label: 'Xbox' },
   { value: '5', label: 'Apple Macintosh' },
   { value: '6', label: 'Linux' },

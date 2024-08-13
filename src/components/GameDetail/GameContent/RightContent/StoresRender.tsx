@@ -12,6 +12,7 @@ export const StoresRender = ({ stores }: Props) => {
       <div className="game-stores">
         {stores?.map((store) => (
           <StoreBtn
+            key={store.id}
             name={store.store.name}
             domain={store.store.domain}
           />
