@@ -48,7 +48,7 @@ export const loadGames =
         dispatch(setAllGames(data.results))
       } catch (err) {
         dispatch(setError(err.message))
-        console.log(err.message)
+        console.error(err.message)
       }
     }
   }

@@ -23,6 +23,9 @@ export const platformIcons: { [key: string]: string } = {
   macOS: 'src/icons/apple_icon_white.svg',
 
   Nintendo: 'src/icons/nintendo_icon_white.svg',
+  'Nintendo Switch': 'src/icons/nintendo_icon_white.svg',
+  'Nintendo Store': 'src/icons/nintendo_icon_white.svg',
+
   Linux: 'src/icons/linux_icon_white.svg',
   Android: 'src/icons/android_icon_white.svg',
   iOS: 'src/icons/ios_icon_white.svg',
