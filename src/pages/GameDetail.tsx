@@ -16,7 +16,8 @@ export const GameDetail = () => {
 
   return (
     <div className="game-page">
-      {status === 'loading' ?? <Loading />}
+      {error && <h1>Error</h1>}
+      {status === 'loading' && <Loading />}
       {status === 'received' && (
         <>
           <div
