@@ -1,11 +1,6 @@
 import { AllGamesActionsType, AllGamesListState } from '../../types'
 import {
-  SET_ALL_GAMES,
-  SET_ERROR,
-  SET_LOADING,
-} from './all-games-actions'
-
-export {
+  CLEAR_GAMES,
   SET_ALL_GAMES,
   SET_ERROR,
   SET_LOADING,
@@ -18,7 +13,7 @@ const initialState: AllGamesListState = {
 }
 
 export const allGamesReducer = (
-  state: AllGamesListState = initialState,
+  state = initialState,
   action: AllGamesActionsType
 ): AllGamesListState => {
   switch (action.type) {
@@ -41,6 +36,8 @@ export const allGamesReducer = (
         status: 'rejected',
         error: action.payload,
       }
+    case CLEAR_GAMES:
+      return initialState
     default:
       return state
   }

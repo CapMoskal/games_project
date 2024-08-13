@@ -3,8 +3,8 @@ import { useRangeDays } from '../../hooks/useRangeDays'
 import { useFilterParams } from '../../hooks/useFilterParams'
 
 import { Filters } from '../../components/Filters'
-import { Loading } from '../../components/Loading'
-import { Games } from '../../components/Games'
+import { Loading } from '../../components/Games/Loading'
+import { Games } from '../../components/Games/Games'
 
 export const NextWeekGames = () => {
   const { error, status, games } = useGamesList()

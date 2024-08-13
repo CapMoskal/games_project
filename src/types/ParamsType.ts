@@ -16,3 +16,8 @@ export interface QueryParams {
     | 'raiting'
     | 'metacritic'
 }
+
+export interface DetailParams {
+  key: string
+  id: string
+}

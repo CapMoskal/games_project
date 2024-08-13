@@ -2,7 +2,10 @@ import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 
 import { RootState } from '../store/rootReducer'
-import { loadGames } from '../store/all-games-list/all-games-actions'
+import {
+  clearGames,
+  loadGames,
+} from '../store/all-games-list/all-games-actions'
 
 import { useAppDispatch } from '../types/DispatchType'
 
@@ -17,7 +20,10 @@ export const useGamesList = () => {
 
   useEffect(() => {
     dispatch(loadGames(params))
-    console.log('effect runs')
+
+    return () => {
+      dispatch(clearGames())
+    }
   }, [dispatch, params])
 
   return { error, status, games }

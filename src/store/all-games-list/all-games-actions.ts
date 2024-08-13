@@ -1,5 +1,7 @@
 import { Dispatch } from 'redux'
 
+import { useCreateURL } from '../useCreateURL'
+
 import { Game, GamesResponse } from '../../types'
 import { AllGamesActionsType } from '../../types'
 import { QueryParams } from '../../types'
@@ -9,7 +11,11 @@ import { ALL_GAMES_URL } from '../../config'
 export const SET_ALL_GAMES = '@@ALL-GAMES/SET_ALL_GAMES'
 export const SET_LOADING = '@@ALL-GAMES/SET_LOADING'
 export const SET_ERROR = '@@ALL-GAMES/SET_ERROR'
+export const CLEAR_GAMES = '@@ALL-GAMES/CLEAR_GAMES'
 
+export const clearGames = () => ({
+  type: CLEAR_GAMES,
+})
 const setError = (err: string): AllGamesActionsType => ({
   type: SET_ERROR,
   payload: err,
@@ -22,17 +28,6 @@ const setAllGames = (data: Game[]): AllGamesActionsType => ({
   payload: data,
 })
 
-const createURL = (baseURL: string, params: QueryParams): string => {
-  const url = new URL(baseURL)
-  Object.keys(params).forEach((key) => {
-    if (params[key]) {
-      return url.searchParams.append(key, params[key])
-    }
-  })
-
-  return url.toString()
-}
-
 export const loadGames =
   (params: QueryParams) =>
   async (dispatch: Dispatch<AllGamesActionsType>) => {
@@ -40,7 +35,7 @@ export const loadGames =
 
     if (params.key) {
       try {
-        const url = createURL(ALL_GAMES_URL, params)
+        const url = useCreateURL(ALL_GAMES_URL, params)
         const res = await fetch(url)
 
         if (!res.ok) {

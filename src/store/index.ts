@@ -18,7 +18,8 @@ const composeEnhancer =
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: [],
+  whitelist: ['library', 'wishlist'],
+  // whitelist: [],
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
