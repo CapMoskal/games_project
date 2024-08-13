@@ -1,13 +1,8 @@
 import { EllipsisOutlined } from '@ant-design/icons'
-import { MdAccountCircle } from 'react-icons/md'
-import { NavLink } from 'react-router-dom'
 
 export const NavBar = () => {
   return (
     <div className="navbar">
-      <NavLink to="/register">
-        <MdAccountCircle className="navbar-item" />
-      </NavLink>
       <EllipsisOutlined
         onMouseOver={() => {
           // console.log('over')

@@ -9,8 +9,6 @@ import {
 
 import { useAppDispatch } from '../types/DispatchType'
 
-// import { API_KEY } from '../config'
-
 export const useGamesList = () => {
   const dispatch = useAppDispatch()
   const { error, status, games } = useSelector(

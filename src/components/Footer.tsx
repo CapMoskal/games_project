@@ -1,3 +1,5 @@
 export const Footer = () => (
-  <footer className="footer">Games What ? 2024</footer>
+  <footer className="footer">
+    <h3>GamesWhat? 2024</h3>
+  </footer>
 )

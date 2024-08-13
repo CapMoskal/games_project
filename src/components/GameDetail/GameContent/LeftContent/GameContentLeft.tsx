@@ -38,7 +38,6 @@ export const GameContentLeft = ({ game }: Props) => {
     Developers: game.developers,
     Tags: game.tags,
   }
-  console.log(game.publichers)
 
   return (
     <div className="game-page--content-left">

@@ -6,8 +6,11 @@ import { RootState } from '../store/rootReducer'
 import { useGameDetail } from '../hooks/useGameDetail'
 import { GameContent } from '../components/GameDetail/GameContent'
 import { Loading } from '../components/Games/Loading'
+import { useScrollToTop } from '../hooks/useScrollToTop'
 
 export const GameDetail = () => {
+  useScrollToTop()
+
   const { id } = useParams()
   const { game, screenshots, status, error } = useSelector(
     (state: RootState) => state.details
