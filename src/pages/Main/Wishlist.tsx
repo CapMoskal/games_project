@@ -1,3 +1,8 @@
+import { useSelector } from 'react-redux'
+import { RootState } from '../../store/rootReducer'
+import { Games } from '../../components/Games/Games'
+
 export const Wishlist = () => {
-  return <h1>Wishlist here</h1>
+  const games = useSelector((state: RootState) => state.wishlist)
+  return <Games title="My Library" games={games} />
 }

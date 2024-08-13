@@ -10,6 +10,7 @@ export const platformIcons: { [key: string]: string } = {
   'Xbox Store': 'src/icons/xbox_icon_white.svg',
   'Xbox 360 Store': 'src/icons/xbox_icon_white.svg',
   Xbox: 'src/icons/xbox_icon_white.svg',
+  'Xbox One': 'src/icons/xbox_icon_white.svg',
   'Xbox Series S/X': 'src/icons/xbox_icon_white.svg',
   'Xbox 360': 'src/icons/xbox_icon_white.svg',
 
