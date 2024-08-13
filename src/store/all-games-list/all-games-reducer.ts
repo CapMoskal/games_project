@@ -1,3 +1,4 @@
+import { Games } from '../../components/Games/Games'
 import { AllGamesActionsType, AllGamesListState } from '../../types'
 import {
   CLEAR_GAMES,
@@ -20,7 +21,7 @@ export const allGamesReducer = (
     case SET_ALL_GAMES:
       return {
         ...state,
-        games: action.payload,
+        games: [...state.games, ...action.payload],
         status: 'received',
         error: null,
       }

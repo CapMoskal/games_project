@@ -1,4 +1,4 @@
-import { useGamesList } from '../../hooks/useAllGamesList'
+import { useGamesList } from '../../hooks/useGamesList'
 import { useFilterParams } from '../../hooks/useFilterParams'
 
 import { Filters } from '../../components/Filters'

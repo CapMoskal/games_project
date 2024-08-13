@@ -197,6 +197,25 @@ main {
   gap: 34px;
 }
 
+.load-more-btn {
+  align-self: center;
+  margin-top: 30px;
+  padding: 10px 15px;
+  font-size: 15px;
+  font-weight: 800;
+  background-color: #111111;
+  color: #f0f0f0;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+
+  transition: border-color 0.5s ease, color 0.5s ease;
+}
+.load-more-btn:hover {
+  color: #38ff21;
+  border-color: #38ff21;
+  cursor: pointer;
+}
+
 .game-con {
   width: 270px;
   min-height: 250px;

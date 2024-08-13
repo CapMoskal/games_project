@@ -1,4 +1,4 @@
-import { useGamesList } from '../../hooks/useAllGamesList'
+import { useGamesList } from '../../hooks/useGamesList'
 import { useRangeDays } from '../../hooks/useRangeDays'
 import { useFilterParams } from '../../hooks/useFilterParams'
 
