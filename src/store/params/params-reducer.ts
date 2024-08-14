@@ -1,6 +1,10 @@
 import { API_KEY } from '../../config'
 import { QueryParams } from '../../types'
-import { SET_PARAMS, SetParamsActionType } from './params-actions'
+import {
+  RESET_PARAMS,
+  SET_PARAMS,
+  TParamsActions,
+} from './params-actions'
 
 const initialState: QueryParams = {
   key: API_KEY,
@@ -11,7 +15,7 @@ const initialState: QueryParams = {
 
 export const paramsReducer = (
   state = initialState,
-  action: SetParamsActionType
+  action: TParamsActions
 ) => {
   switch (action.type) {
     case SET_PARAMS:
@@ -19,6 +23,8 @@ export const paramsReducer = (
         ...state,
         ...action.payload,
       }
+    case RESET_PARAMS:
+      return initialState
     default:
       return state
   }

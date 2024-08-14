@@ -1,14 +1,17 @@
 import { useSelector } from 'react-redux'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 import { RootState } from '../store/rootReducer'
 import {
   clearGames,
   loadGames,
 } from '../store/all-games-list/all-games-actions'
+import {
+  resetParams,
+  setParams,
+} from '../store/params/params-actions'
 
-import { useAppDispatch } from '../types/DispatchType'
-import { setParams } from '../store/params/params-actions'
+import { useAppDispatch } from '../types'
 
 export const useGamesList = () => {
   const dispatch = useAppDispatch()
@@ -16,24 +19,23 @@ export const useGamesList = () => {
     (state: RootState) => state.games
   )
   const params = useSelector((state: RootState) => state.params)
-  const [pageCount, setPageCount] = useState<number>(1)
+  const pageCount = params.page as number
 
   useEffect(() => {
     console.log('load games effect runs')
-    dispatch(loadGames({ ...params, page: pageCount }))
+    dispatch(loadGames(params))
 
-    return () => {
-      dispatch(clearGames())
-    }
-  }, [dispatch, pageCount, params])
+    // return () => {
+    //   dispatch(clearGames())
+    //   dispatch(resetParams())
+    // }
+  }, [dispatch, params])
 
   const loadNextPage = () => {
-    setPageCount((prevPage) => prevPage + 1)
-    dispatch(setParams({ page: pageCount }))
+    dispatch(setParams({ page: pageCount + 1 }))
   }
   const loadPrevPage = () => {
-    setPageCount((prevPage) => prevPage - 1)
-    dispatch(setParams({ page: pageCount }))
+    dispatch(setParams({ page: pageCount - 1 }))
   }
 
   return {

@@ -10,6 +10,7 @@ interface Props {
 
 export const Games = ({ title, games }: Props) => {
   useScrollToTop()
+
   return (
     <div className="games">
       {games.length === 0 ? (

@@ -2,7 +2,7 @@ import { GenresType } from './GenreType'
 
 export interface QueryParams {
   key?: string
-  platforms?: string | null
+  platforms?: string
   page?: number
   page_size?: number
   genres?: GenresType

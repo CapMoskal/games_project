@@ -4,6 +4,7 @@ import { RootState } from '../store/rootReducer'
 import { useEffect } from 'react'
 import { API_KEY } from '../config'
 import { setParams } from '../store/params/params-actions'
+import { clearGames } from '../store/all-games-list/all-games-actions'
 
 type Props = {
   genre: QueryParams['genres']
@@ -38,5 +39,9 @@ export const useFilterParams = (
     }
 
     dispatch(setParams(params))
+
+    // return () => {
+    //   dispatch(clearGames())
+    // }
   }, [dispatch, filters, date])
 }
