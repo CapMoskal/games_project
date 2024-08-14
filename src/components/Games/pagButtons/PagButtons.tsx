@@ -10,7 +10,11 @@ export const PagButtons = ({
   loadPrevPage,
 }: Props) => (
   <div className="pag-btns">
-    <button className="pag-btns--btn" onClick={() => loadPrevPage()}>
+    <button
+      className="pag-btns--btn"
+      onClick={() => loadPrevPage()}
+      disabled={pageCount === 1}
+    >
       {'<'}
     </button>
     <h3 className="page-btns--count">{pageCount}</h3>
