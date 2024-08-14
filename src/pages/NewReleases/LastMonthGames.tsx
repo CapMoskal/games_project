@@ -9,7 +9,7 @@ import { Games } from '../../components/Games/Games'
 export const LastMonthGames = () => {
   const { error, status, games } = useGamesList()
   const date = useRangeDays(-30)
-  useFilterParams(date)
+  // useFilterParams(date)
 
   return (
     <div className="games-n-filters">

@@ -15,16 +15,15 @@ export const AllGamesList = () => {
     loadPrevPage,
     pageCount,
   } = useGamesList()
-  // useFilterParams()
 
   return (
     <div className="games-n-filters">
       <>
+        <Filters order platforms genre />
         {status === 'loading' && <Loading />}
         {error && <h1>Error: {error}</h1>}
         {status === 'received' && (
           <>
-            <Filters order platforms genre />
             <Games title="All Games" games={games} />
             <PagButtons
               pageCount={pageCount}

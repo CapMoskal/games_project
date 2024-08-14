@@ -2,14 +2,8 @@ import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 
 import { RootState } from '../store/rootReducer'
-import {
-  clearGames,
-  loadGames,
-} from '../store/all-games-list/all-games-actions'
-import {
-  resetParams,
-  setParams,
-} from '../store/params/params-actions'
+import { loadGames } from '../store/all-games-list/all-games-actions'
+import { setParams } from '../store/params/params-actions'
 
 import { useAppDispatch } from '../types'
 

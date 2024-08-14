@@ -2,7 +2,7 @@ import { GenresType } from './GenreType'
 
 export interface QueryParams {
   key?: string
-  platforms?: string
+  platforms?: string | null
   page?: number
   page_size?: number
   genres?: GenresType
@@ -13,8 +13,9 @@ export interface QueryParams {
     | 'added'
     | 'created'
     | 'updated'
-    | 'raiting'
+    | 'rating'
     | 'metacritic'
+    | null
 }
 
 export interface DetailParams {

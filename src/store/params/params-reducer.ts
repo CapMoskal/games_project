@@ -10,7 +10,7 @@ const initialState: QueryParams = {
   key: API_KEY,
   page: 1,
   page_size: 20,
-  ordering: 'raiting',
+  // ordering: 'rating',
 }
 
 export const paramsReducer = (
