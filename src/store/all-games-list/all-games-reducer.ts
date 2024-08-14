@@ -22,6 +22,7 @@ export const allGamesReducer = (
       return {
         ...state,
         games: [...state.games, ...action.payload],
+        // games: action.payload,
         status: 'received',
         error: null,
       }

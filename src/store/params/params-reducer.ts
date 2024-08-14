@@ -1,14 +1,11 @@
-// import { API_KEY } from '../../config'
 import { API_KEY } from '../../config'
 import { QueryParams } from '../../types'
 import { SET_PARAMS, SetParamsActionType } from './params-actions'
 
 const initialState: QueryParams = {
-  // по идее можно один раз тут указать ключ
-  // проверить позже
   key: API_KEY,
   page: 1,
-  page_size: 40,
+  page_size: 20,
   ordering: 'raiting',
 }
 

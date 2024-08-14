@@ -4,11 +4,18 @@ import { useFilterParams } from '../../hooks/useFilterParams'
 import { Filters } from '../../components/Filters'
 import { Loading } from '../../components/Games/Loading'
 import { Games } from '../../components/Games/Games'
+import { PagButtons } from '../../components/Games/pagButtons/PagButtons'
 
 export const AllGamesList = () => {
-  const { error, status, games, loadMoreGames } = useGamesList()
-  useFilterParams()
-  console.log(games.length)
+  const {
+    error,
+    status,
+    games,
+    loadNextPage,
+    loadPrevPage,
+    pageCount,
+  } = useGamesList()
+  // useFilterParams()
 
   return (
     <div className="games-n-filters">
@@ -19,12 +26,11 @@ export const AllGamesList = () => {
         {status === 'received' && (
           <>
             <Games title="All Games" games={games} />
-            <button
-              className="load-more-btn"
-              onClick={() => loadMoreGames()}
-            >
-              Load more
-            </button>
+            <PagButtons
+              pageCount={pageCount}
+              loadPrevPage={loadPrevPage}
+              loadNextPage={loadNextPage}
+            />
           </>
         )}
       </>

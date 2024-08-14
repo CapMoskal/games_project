@@ -197,11 +197,19 @@ main {
   gap: 34px;
 }
 
-.load-more-btn {
-  align-self: center;
+.pag-btns {
+  user-select: none;
   margin-top: 30px;
-  padding: 10px 15px;
-  font-size: 15px;
+  width: 200px;
+  align-self: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.pag-btns--btn {
+  align-self: center;
+  padding: 5px 10px;
+  font-size: 20px;
   font-weight: 800;
   background-color: #111111;
   color: #f0f0f0;
@@ -210,13 +218,18 @@ main {
 
   transition: border-color 0.5s ease, color 0.5s ease;
 }
-.load-more-btn:hover {
+.pag-btns--btn:hover {
   color: #38ff21;
   border-color: #38ff21;
   cursor: pointer;
 }
 
+.page-btns--count {
+  margin: 0;
+}
+
 .game-con {
+  user-select: none;
   width: 270px;
   min-height: 250px;
   position: relative;
@@ -293,6 +306,7 @@ main {
   margin: 10px 10px 20px;
 }
 .game-card--title {
+  user-select: text;
   min-width: 250px;
   color: #f0f0f0;
   text-decoration: none;

@@ -9,8 +9,6 @@ import {
 
 import { useAppDispatch } from '../types/DispatchType'
 import { setParams } from '../store/params/params-actions'
-import { QueryParams } from '../types'
-import { API_KEY } from '../config'
 
 export const useGamesList = () => {
   const dispatch = useAppDispatch()
@@ -18,28 +16,32 @@ export const useGamesList = () => {
     (state: RootState) => state.games
   )
   const params = useSelector((state: RootState) => state.params)
-  const [pageCount, setPageCount] = useState<QueryParams['page']>(1)
-
-  const loadMoreGames = () => {
-    setPageCount((prevPage) => prevPage + 1)
-    const params: QueryParams = {
-      key: API_KEY,
-      page: pageCount,
-      ordering: 'raiting',
-    }
-    dispatch(setParams(params))
-  }
+  const [pageCount, setPageCount] = useState<number>(1)
 
   useEffect(() => {
-    dispatch(loadGames(params))
+    console.log('load games effect runs')
+    dispatch(loadGames({ ...params, page: pageCount }))
 
-    // return () => {
-    //   dispatch(clearGames())
-    // }
-  }, [dispatch, params])
+    return () => {
+      dispatch(clearGames())
+    }
+  }, [dispatch, pageCount, params])
 
-  return { error, status, games, loadMoreGames }
+  const loadNextPage = () => {
+    setPageCount((prevPage) => prevPage + 1)
+    dispatch(setParams({ page: pageCount }))
+  }
+  const loadPrevPage = () => {
+    setPageCount((prevPage) => prevPage - 1)
+    dispatch(setParams({ page: pageCount }))
+  }
+
+  return {
+    error,
+    status,
+    games,
+    pageCount,
+    loadNextPage,
+    loadPrevPage,
+  }
 }
-
-// найти причину, почему в начале загружает два раза первую страницу
-// разобраться с пагинацией
