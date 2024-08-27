@@ -682,3 +682,45 @@ body {
   border-top: 1px solid #272a31;
   height: 70px;
 }
+
+.faq-con {
+  width: 50%;
+  margin: 10px auto;
+}
+
+.faq-con--list-item {
+  border-radius: 5px;
+  background-color: #272729;
+  margin-bottom: 10px;
+  transition: height 0.3s ease;
+}
+
+.faq-con--list-item p {
+  font-weight: 400;
+  padding: 10px;
+  margin: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.faq-con--list--header {
+  height: 50px;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+.faq-con--list--header:hover {
+  color: #38ff21;
+  background-color: #333335;
+  cursor: pointer;
+}
+
+.faq-con--list--header h3 {
+  font-size: 21px;
+  font-weight: 700;
+  margin: 10px 0;
+}
