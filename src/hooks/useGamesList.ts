@@ -39,14 +39,12 @@ export const useGamesList = (releaseDate: string | null = null) => {
     if (isInitialLoad.current) {
       isInitialLoad.current = false
     } else {
-      console.log('load games effect runs')
       dispatch(loadGames(params))
     }
   }, [dispatch, params])
 
   useEffect(() => {
     return () => {
-      console.log('cleared')
       dispatch(clearGames())
       dispatch(resetParams())
     }

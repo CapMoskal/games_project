@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import { NavBar } from './NavBar'
+import { ExtraIcon } from './headerExtraInfo/ExtraIcon'
 import { GameSearch } from './SearchBar/GameSearch'
 
 export const Header = () => {
@@ -9,7 +9,7 @@ export const Header = () => {
         GamesWhat?
       </NavLink>
       <GameSearch />
-      <NavBar />
+      <ExtraIcon />
     </header>
   )
 }
