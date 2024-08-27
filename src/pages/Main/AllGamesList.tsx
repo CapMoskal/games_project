@@ -1,5 +1,4 @@
 import { useGamesList } from '../../hooks/useGamesList'
-import { useFilterParams } from '../../hooks/useFilterParams'
 
 import { Filters } from '../../components/Filters'
 import { Loading } from '../../components/Games/Loading'
@@ -11,6 +10,7 @@ export const AllGamesList = () => {
     error,
     status,
     games,
+    noMoreGames,
     loadNextPage,
     loadPrevPage,
     pageCount,
@@ -29,6 +29,7 @@ export const AllGamesList = () => {
               pageCount={pageCount}
               loadPrevPage={loadPrevPage}
               loadNextPage={loadNextPage}
+              noMoreGames={noMoreGames}
             />
           </>
         )}

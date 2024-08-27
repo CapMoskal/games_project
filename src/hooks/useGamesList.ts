@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 import { RootState } from '../store/rootReducer'
 import {
@@ -14,24 +14,39 @@ import {
 import { useAppDispatch } from '../types'
 import { useLocation } from 'react-router-dom'
 
-export const useGamesList = () => {
+export const useGamesList = (releaseDate: string | null = null) => {
   const dispatch = useAppDispatch()
-  const { error, status, games } = useSelector(
+  const { error, status, games, noMoreGames } = useSelector(
     (state: RootState) => state.games
   )
   const params = useSelector((state: RootState) => state.params)
-  const pageCount = params.page as number
+  const pageCount = params.page ?? 1
   const location = useLocation()
 
+  const isInitialLoad = useRef(true)
+
   useEffect(() => {
-    console.log('load games effect runs')
-    dispatch(loadGames(params))
+    if (!params.page) {
+      dispatch(setParams({ page: 1 }))
+    }
+
+    if (releaseDate) {
+      dispatch(setParams({ dates: releaseDate }))
+    }
+  }, [dispatch, releaseDate, params.page])
+
+  useEffect(() => {
+    if (isInitialLoad.current) {
+      isInitialLoad.current = false
+    } else {
+      console.log('load games effect runs')
+      dispatch(loadGames(params))
+    }
   }, [dispatch, params])
 
   useEffect(() => {
-    // для очистки массива игр и параметров запроса
-    // при размонтировании страницы
     return () => {
+      console.log('cleared')
       dispatch(clearGames())
       dispatch(resetParams())
     }
@@ -48,6 +63,7 @@ export const useGamesList = () => {
     error,
     status,
     games,
+    noMoreGames,
     pageCount,
     loadNextPage,
     loadPrevPage,

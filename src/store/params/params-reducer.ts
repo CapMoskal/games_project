@@ -8,8 +8,8 @@ import {
 
 const initialState: QueryParams = {
   key: API_KEY,
-  page: 1,
   page_size: 20,
+  // page: 1,
   // ordering: 'rating',
 }
 

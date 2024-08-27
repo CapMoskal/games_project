@@ -2,10 +2,12 @@ interface Props {
   loadNextPage: () => void
   loadPrevPage: () => void
   pageCount: number
+  noMoreGames: boolean
 }
 
 export const PagButtons = ({
   pageCount,
+  noMoreGames,
   loadNextPage,
   loadPrevPage,
 }: Props) => (
@@ -18,7 +20,11 @@ export const PagButtons = ({
       {'<'}
     </button>
     <h3 className="page-btns--count">{pageCount}</h3>
-    <button className="pag-btns--btn" onClick={() => loadNextPage()}>
+    <button
+      disabled={noMoreGames}
+      className="pag-btns--btn"
+      onClick={() => loadNextPage()}
+    >
       {'>'}
     </button>
   </div>

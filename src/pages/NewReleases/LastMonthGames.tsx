@@ -1,13 +1,14 @@
 import { useGamesList } from '../../hooks/useGamesList'
+import { useRangeDays } from '../../hooks/useRangeDays'
 
 import { Filters } from '../../components/Filters'
-import { useRangeDays } from '../../hooks/useRangeDays'
 import { Loading } from '../../components/Games/Loading'
 import { Games } from '../../components/Games/Games'
 import { PagButtons } from '../../components/Games/pagButtons/PagButtons'
 
 export const LastMonthGames = () => {
   const date = useRangeDays(-30)
+
   const {
     error,
     status,
@@ -15,11 +16,8 @@ export const LastMonthGames = () => {
     loadNextPage,
     loadPrevPage,
     pageCount,
-  } = useGamesList()
-
-  // при загрузке основной страницы почему-то криво заполняется
-  // массив игр для отображения
-  // разобраться (как-то)
+    noMoreGames,
+  } = useGamesList(date)
 
   return (
     <div className="games-n-filters">
@@ -34,6 +32,7 @@ export const LastMonthGames = () => {
               pageCount={pageCount}
               loadPrevPage={loadPrevPage}
               loadNextPage={loadNextPage}
+              noMoreGames={noMoreGames}
             />
           </>
         )}
