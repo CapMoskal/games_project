@@ -5,12 +5,17 @@ export const NavBar = () => {
     <div className="navbar">
       <EllipsisOutlined
         onMouseOver={() => {
-          // console.log('over')
-          // сделать появление модального окна с доп кнопками
+          console.log('over')
         }}
         className="navbar-item"
       />
-      {/* наводя на троеточие будет выпадать меню с доп функциями (faq и тд) */}
+      <div className="modal">
+        <ul>
+          <li>FAQ</li>
+          <li>Discord</li>
+          <li>Poshel naxyi</li>
+        </ul>
+      </div>
     </div>
   )
 }
