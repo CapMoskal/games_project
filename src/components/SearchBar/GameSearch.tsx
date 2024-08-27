@@ -9,20 +9,12 @@ import { SuggestionBlock } from './SuggestionBlock'
 export const GameSearch = () => {
   const [query, setQuery] = useState('')
   const [suggestions, setSuggestions] = useState<Game[]>([])
-  const [debounceTimeout, setDebounceTimeout] =
-    useState<NodeJS.Timeout | null>(null)
   const [isDropdownVisible, setIsDropdownVisible] = useState(false)
   const searchContainerRef = useRef<HTMLDivElement>(null)
 
   handleClick(searchContainerRef, setIsDropdownVisible)
 
-  useSearchGames(
-    debounceTimeout,
-    query,
-    setSuggestions,
-    setIsDropdownVisible,
-    setDebounceTimeout
-  )
+  useSearchGames(query, setSuggestions, setIsDropdownVisible)
 
   return (
     <div className="search-container" ref={searchContainerRef}>

@@ -2,32 +2,37 @@ import { ConfigProvider, Select } from 'antd'
 
 import { useAppDispatch } from '../types'
 
-import {
-  setGenre,
-  setOrder,
-  setPlatform,
-} from '../store/filters/filters-actions'
+import { setParams } from '../store/params/params-actions'
 
 const platformOptions = [
   { value: null, label: 'All platforms' },
-  { value: '1', label: 'PC' },
-  { value: '2', label: 'PlayStation' },
-  { value: '3', label: 'Xbox' },
-  { value: '5', label: 'Apple Macintosh' },
-  { value: '6', label: 'Linux' },
-  { value: '7', label: 'Nintendo' },
+  { value: '4', label: 'PC' },
+  { value: '16', label: 'PlayStation 3' },
+  { value: '18', label: 'PlayStation 4' },
+  { value: '187', label: 'PlayStation 5' },
+  { value: '1', label: 'Xbox One' },
+  { value: '186', label: 'Xbox Series S/X' },
+  { value: '7', label: 'Nintendo Switch' },
+  { value: '5', label: 'macOS' },
 ]
 const genreOptions = [
   { value: null, label: 'All genres' },
   { value: 'adventure', label: 'Adventure' },
+  { value: 'indie', label: 'Indie' },
   { value: 'action', label: 'Action' },
-  { value: 'rpg', label: 'RPG' },
-  { value: 'survival', label: 'Survival' },
+  { value: 'role-playing-games-rpg', label: 'RPG' },
+  { value: 'strategy', label: 'Strategy' },
+  { value: 'shooter', label: 'Shooter' },
+  { value: 'casual', label: 'Casual' },
+  { value: 'simulation', label: 'Simulation' },
+  { value: 'arcade', label: 'Arcade' },
 ]
 const orderOptions = [
-  { value: 'raiting', label: 'Raiting' },
+  { value: null, label: 'No order' },
+  { value: 'rating', label: 'Rating' },
   { value: 'released', label: 'Release date' },
   { value: 'name', label: 'Name' },
+  { value: 'metacritic', label: 'Metacritic' },
 ]
 
 // styles for select antd
@@ -55,10 +60,10 @@ export const Filters = ({
 
   const orderS = (
     <Select
-      defaultValue="raiting"
+      defaultValue={null}
       style={{ width: 130, marginRight: 5 }}
       onChange={(value) => {
-        dispatch(setOrder(value))
+        dispatch(setParams({ ordering: value }))
       }}
       options={orderOptions}
     />
@@ -68,7 +73,7 @@ export const Filters = ({
       defaultValue={null}
       style={{ width: 130, marginRight: 5 }}
       onChange={(value) => {
-        dispatch(setGenre(value))
+        dispatch(setParams({ genres: value }))
       }}
       options={genreOptions}
     />
@@ -78,7 +83,7 @@ export const Filters = ({
       defaultValue={null}
       style={{ width: 140, marginRight: 5 }}
       onChange={(value) => {
-        dispatch(setPlatform(value))
+        dispatch(setParams({ platforms: value }))
       }}
       options={platformOptions}
     />

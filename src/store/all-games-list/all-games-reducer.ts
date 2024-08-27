@@ -4,12 +4,14 @@ import {
   SET_ALL_GAMES,
   SET_ERROR,
   SET_LOADING,
+  SET_NO_MORE_GAMES,
 } from './all-games-actions'
 
 const initialState: AllGamesListState = {
   games: [],
   status: 'idle',
   error: null,
+  noMoreGames: false,
 }
 
 export const allGamesReducer = (
@@ -29,12 +31,18 @@ export const allGamesReducer = (
         ...state,
         error: null,
         status: 'loading',
+        noMoreGames: false,
       }
     case SET_ERROR:
       return {
         ...state,
         status: 'rejected',
         error: action.payload,
+      }
+    case SET_NO_MORE_GAMES:
+      return {
+        ...state,
+        noMoreGames: true,
       }
     case CLEAR_GAMES:
       return initialState

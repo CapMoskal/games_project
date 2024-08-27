@@ -12,9 +12,13 @@ export const SET_ALL_GAMES = '@@ALL-GAMES/SET_ALL_GAMES'
 export const SET_LOADING = '@@ALL-GAMES/SET_LOADING'
 export const SET_ERROR = '@@ALL-GAMES/SET_ERROR'
 export const CLEAR_GAMES = '@@ALL-GAMES/CLEAR_GAMES'
+export const SET_NO_MORE_GAMES = '@@ALL-GAMES/SET_NO_MORE_GAMES'
 
-export const clearGames = () => ({
+export const clearGames = (): AllGamesActionsType => ({
   type: CLEAR_GAMES,
+})
+export const setNoMoreGames = (): AllGamesActionsType => ({
+  type: SET_NO_MORE_GAMES,
 })
 const setError = (err: string): AllGamesActionsType => ({
   type: SET_ERROR,
@@ -45,6 +49,11 @@ export const loadGames =
         }
 
         const data: GamesResponse = await res.json()
+
+        if (!data.next) {
+          dispatch(setNoMoreGames())
+        }
+
         dispatch(setAllGames(data.results))
       } catch (err) {
         dispatch(setError(err.message))
