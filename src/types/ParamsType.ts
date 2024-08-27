@@ -1,20 +1,21 @@
 import { GenresType } from './GenreType'
 
 export interface QueryParams {
-  key: string
+  key?: string
   platforms?: string | null
   page?: number
   page_size?: number
   genres?: GenresType
   dates?: string
-  ordering:
+  ordering?:
     | 'name'
     | 'released'
     | 'added'
     | 'created'
     | 'updated'
-    | 'raiting'
+    | 'rating'
     | 'metacritic'
+    | null
 }
 
 export interface DetailParams {

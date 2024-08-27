@@ -1,45 +1,71 @@
 import { useSelector } from 'react-redux'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 import { RootState } from '../store/rootReducer'
 import {
   clearGames,
   loadGames,
 } from '../store/all-games-list/all-games-actions'
+import {
+  resetParams,
+  setParams,
+} from '../store/params/params-actions'
 
-import { useAppDispatch } from '../types/DispatchType'
-import { setParams } from '../store/params/params-actions'
-import { QueryParams } from '../types'
-import { API_KEY } from '../config'
+import { useAppDispatch } from '../types'
+import { useLocation } from 'react-router-dom'
 
-export const useGamesList = () => {
+export const useGamesList = (releaseDate: string | null = null) => {
   const dispatch = useAppDispatch()
-  const { error, status, games } = useSelector(
+  const { error, status, games, noMoreGames } = useSelector(
     (state: RootState) => state.games
   )
   const params = useSelector((state: RootState) => state.params)
-  const [pageCount, setPageCount] = useState<QueryParams['page']>(1)
+  const pageCount = params.page ?? 1
+  const location = useLocation()
 
-  const loadMoreGames = () => {
-    setPageCount((prevPage) => prevPage + 1)
-    const params: QueryParams = {
-      key: API_KEY,
-      page: pageCount,
-      ordering: 'raiting',
-    }
-    dispatch(setParams(params))
-  }
+  const isInitialLoad = useRef(true)
 
   useEffect(() => {
-    dispatch(loadGames(params))
+    if (!params.page) {
+      dispatch(setParams({ page: 1 }))
+    }
 
-    // return () => {
-    //   dispatch(clearGames())
-    // }
+    if (releaseDate) {
+      dispatch(setParams({ dates: releaseDate }))
+    }
+  }, [dispatch, releaseDate, params.page])
+
+  useEffect(() => {
+    if (isInitialLoad.current) {
+      isInitialLoad.current = false
+    } else {
+      console.log('load games effect runs')
+      dispatch(loadGames(params))
+    }
   }, [dispatch, params])
 
-  return { error, status, games, loadMoreGames }
-}
+  useEffect(() => {
+    return () => {
+      console.log('cleared')
+      dispatch(clearGames())
+      dispatch(resetParams())
+    }
+  }, [dispatch, location.pathname])
 
-// найти причину, почему в начале загружает два раза первую страницу
-// разобраться с пагинацией
+  const loadNextPage = () => {
+    dispatch(setParams({ page: pageCount + 1 }))
+  }
+  const loadPrevPage = () => {
+    dispatch(setParams({ page: pageCount - 1 }))
+  }
+
+  return {
+    error,
+    status,
+    games,
+    noMoreGames,
+    pageCount,
+    loadNextPage,
+    loadPrevPage,
+  }
+}

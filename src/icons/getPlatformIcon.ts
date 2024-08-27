@@ -16,11 +16,13 @@ export const platformIcons: { [key: string]: string } = {
 
   'PlayStation Store': 'src/icons/ps_icon_white.svg',
   PlayStation: 'src/icons/ps_icon_white.svg',
+  'PlayStation 3': 'src/icons/ps_icon_white.svg',
   'PlayStation 4': 'src/icons/ps_icon_white.svg',
   'PlayStation 5': 'src/icons/ps_icon_white.svg',
 
   'Apple Macintosh': 'src/icons/apple_icon_white.svg',
   macOS: 'src/icons/apple_icon_white.svg',
+  'App Store': 'src/icons/apple_icon_white.svg',
 
   Nintendo: 'src/icons/nintendo_icon_white.svg',
   'Nintendo Switch': 'src/icons/nintendo_icon_white.svg',
