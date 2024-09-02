@@ -9,8 +9,6 @@ import {
 const initialState: QueryParams = {
   key: API_KEY,
   page_size: 20,
-  // page: 1,
-  // ordering: 'rating',
 }
 
 export const paramsReducer = (

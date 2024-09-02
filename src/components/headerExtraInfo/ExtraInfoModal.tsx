@@ -5,7 +5,11 @@ export const ExtraInfoModal = () => {
   return (
     <div className="modal">
       {modalItems.map((item) => (
-        <NavLink className="modal--item" to={item.to}>
+        <NavLink
+          key={item.title}
+          className="modal--item"
+          to={item.to}
+        >
           {item.title}
         </NavLink>
       ))}
