@@ -48,7 +48,6 @@ export const GameContentLeft = ({ game }: Props) => {
         name_original={game.name_original}
       />
       <GameBtns game={game} />
-      {/* <GameTops /> */}
       <GameAbout description={game.description} />
       <GameExtraInfo extraInfoObj={extraInfoObj} />
     </div>

@@ -87,7 +87,7 @@ export interface TGameDetail {
   developers: TDevelopers[]
   tags: TTags[]
   publichers: TPublishers[]
-  esrb_rating: TEsrbRating
+  esrb_rating: TEsrbRating | undefined
 }
 
 export interface TScreenshotsResults {

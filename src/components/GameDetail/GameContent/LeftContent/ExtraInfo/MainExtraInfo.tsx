@@ -2,8 +2,8 @@ import {
   TDevelopers,
   TPublishers,
   TTags,
-} from '../../../store/detail/detail-types'
-import { Genre } from '../../../types'
+} from '../../../../../store/detail/detail-types'
+import { Genre } from '../../../../../types'
 
 interface Props {
   render: Genre[] | TDevelopers[] | TPublishers[] | TTags[]

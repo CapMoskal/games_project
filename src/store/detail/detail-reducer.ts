@@ -22,6 +22,13 @@ const initialState: TInitialState = {
     playtime: 0,
     released: '',
     platforms: [],
+    parent_platforms: [],
+    genres: [],
+    stores: [],
+    developers: [],
+    tags: [],
+    publichers: [],
+    esrb_rating: undefined,
   },
   screenshots: {
     count: 0,
