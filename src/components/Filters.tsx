@@ -5,7 +5,7 @@ import { useAppDispatch } from '../types'
 import { setParams } from '../store/params/params-actions'
 
 const platformOptions = [
-  { value: null, label: 'All platforms' },
+  { value: '', label: 'All platforms' },
   { value: '4', label: 'PC' },
   { value: '16', label: 'PlayStation 3' },
   { value: '18', label: 'PlayStation 4' },
@@ -16,7 +16,7 @@ const platformOptions = [
   { value: '5', label: 'macOS' },
 ]
 const genreOptions = [
-  { value: null, label: 'All genres' },
+  { value: '', label: 'All genres' },
   { value: 'adventure', label: 'Adventure' },
   { value: 'indie', label: 'Indie' },
   { value: 'action', label: 'Action' },
@@ -28,7 +28,7 @@ const genreOptions = [
   { value: 'arcade', label: 'Arcade' },
 ]
 const orderOptions = [
-  { value: null, label: 'No order' },
+  { value: '', label: 'No order' },
   { value: 'rating', label: 'Rating' },
   { value: 'released', label: 'Release date' },
   { value: 'name', label: 'Name' },
@@ -60,7 +60,7 @@ export const Filters = ({
 
   const orderS = (
     <Select
-      defaultValue={null}
+      defaultValue={''}
       style={{ width: 130, marginRight: 5 }}
       onChange={(value) => {
         dispatch(setParams({ ordering: value }))
@@ -70,7 +70,7 @@ export const Filters = ({
   )
   const genreS = (
     <Select
-      defaultValue={null}
+      defaultValue={''}
       style={{ width: 130, marginRight: 5 }}
       onChange={(value) => {
         dispatch(setParams({ genres: value }))
@@ -80,7 +80,7 @@ export const Filters = ({
   )
   const platformsS = (
     <Select
-      defaultValue={null}
+      defaultValue={''}
       style={{ width: 140, marginRight: 5 }}
       onChange={(value) => {
         dispatch(setParams({ platforms: value }))
